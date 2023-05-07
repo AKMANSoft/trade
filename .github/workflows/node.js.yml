@@ -31,5 +31,5 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
         server: mi6.global
-        username: trade
+        username: trade@mi6.global
         password: vqg{}-Z0*+58
