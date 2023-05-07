@@ -30,6 +30,6 @@ jobs:
     - name: Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
-        server: ftp.mi6.global
-        username: zs253sikhhim
-        password: Aqeel0101!
+        server: mi6.global
+        username: trade
+        password: vqg{}-Z0*+58
