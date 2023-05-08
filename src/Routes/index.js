@@ -4,6 +4,7 @@ import { Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 const Home = React.lazy(() => import ('../Container/home'));
 const Pricing = React.lazy(() => import ('../Container/pricing'));
 const FindContainer = React.lazy(() => import ('../Container/findContainer'));
+const ProfileSetup = React.lazy(() => import ('../Container/profileSetup'));
 
 const MyRoutes = () => {
   useEffect(() => {
@@ -26,6 +27,12 @@ const MyRoutes = () => {
       <Route path="/find-container" element={
         <React.Suspense fallback={<span>...Loading</span>}>
           <FindContainer />
+        </React.Suspense>   
+        } 
+      />
+      <Route path="/profile-setup" element={
+        <React.Suspense fallback={<span>...Loading</span>}>
+          <ProfileSetup />
         </React.Suspense>   
         } 
       />

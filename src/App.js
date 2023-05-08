@@ -20,6 +20,7 @@ class App extends Component {
         theme={{
           token: {
             fontFamily: 'Poppins',
+            colorPrimary: '#F49A26',
           },
         }}>
           <MyRoutes />
