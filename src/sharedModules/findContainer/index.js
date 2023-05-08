@@ -17,11 +17,11 @@ const FindContainer = ()=> {
         <h3>Find a Container</h3>
         <p>Kindly provide your container requirements.</p>
       </div>
-      <Space className='container-type' size={14}>
+      <Radio.Group name='radioGroup' className='container-type' size={14}>
         <Radio.Button value="a">Buy</Radio.Button>
         <Radio.Button value="b">Sell</Radio.Button>
         <Radio.Button value="c">Lease</Radio.Button>
-      </Space>
+      </Radio.Group>
       <div className='container-body'>
       <Form name="basic" layout="vertical"
         initialValues={{ remember: true }} autoComplete="off">

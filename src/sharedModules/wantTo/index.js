@@ -35,11 +35,11 @@ const WantTo = ()=> {
           </Col>
           <Col md={6}>
             <Form.Item>
-            <label className='ant-form-item-label'>Pick-up</label>
-            <Select style={{ height: 60 }}
-              placeholder="Select a pick-up location" prefix={<EnvironmentOutlined />}
-              options={provinceData.map((province) => ({ label: province, value: province }))}
-            />
+              <label className='ant-form-item-label'>Pick-up</label>
+              <Select style={{ height: 60 }}
+                placeholder="Select a pick-up location" prefix={<EnvironmentOutlined />}
+                options={provinceData.map((province) => ({ label: province, value: province }))}
+              />
             </Form.Item>
           </Col>
           <Col md={6}>

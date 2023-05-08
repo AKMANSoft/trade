@@ -73,12 +73,12 @@ const Index = () => {
                     </div>
                     <div className="menu-content">
                       <p>Get our app on your mobile app.</p>
-                      <Row>
+                      <Row gutter={10}>
                         <Col span={12}>
-                          <img src={Google} alt="google play"/>
+                          <img src={Google} alt="google play" className="img-fluid"/>
                         </Col>
                         <Col span={12}>
-                          <img src={Ios} alt="apple play"/>
+                          <img src={Ios} alt="apple play" className="img-fluid"/>
                         </Col>
                       </Row>
                     </div>
