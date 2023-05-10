@@ -3,7 +3,7 @@ import { Form, Button, Input, Modal, Menu, Checkbox, Row, Col } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import { MailOutlined, LockOutlined, ContainerOutlined, UserOutlined } from '@ant-design/icons';
 
-import Logo from '../../images/logo.png'
+import Logo from '../../images/logo.svg'
 import LoginIcon from '../../images/login-icon.png'
 import Lock from '../../images/lock.png'
 

@@ -7,6 +7,9 @@ const FindContainer = React.lazy(() => import ('../Container/findContainer'));
 const ProfileSetup = React.lazy(() => import ('../Container/profileSetup'));
 const Dashboard = React.lazy(() => import ('../Container/dashboard'));
 const RequirementForm = React.lazy(() => import ('../Container/requirementForm'));
+const MyAccount = React.lazy(() => import ('../Container/myAccount'));
+const CompanyProfile = React.lazy(() => import ('../Container/companyProfile'));
+const ManageUser = React.lazy(() => import ('../Container/manageUser'));
 
 const MyRoutes = () => {
   useEffect(() => {
@@ -47,6 +50,24 @@ const MyRoutes = () => {
       <Route path="/supplier-requirements" element={
         <React.Suspense fallback={<span>...Loading</span>}>
           <RequirementForm />
+        </React.Suspense>   
+        } 
+      />
+      <Route path="/my-account" element={
+        <React.Suspense fallback={<span>...Loading</span>}>
+          <MyAccount />
+        </React.Suspense>   
+        } 
+      />
+      <Route path="/company-profile" element={
+        <React.Suspense fallback={<span>...Loading</span>}>
+          <CompanyProfile />
+        </React.Suspense>   
+        } 
+      />
+      <Route path="/manage-user" element={
+        <React.Suspense fallback={<span>...Loading</span>}>
+          <ManageUser />
         </React.Suspense>   
         } 
       />
