@@ -1,11 +1,13 @@
 
 
 import React, { useState,useEffect } from 'react';
-import { Timeline, Tag, Row, Col, Button, Space, Avatar } from "antd";
-import { AimOutlined, EnvironmentOutlined, StarFilled, EyeFilled } from '@ant-design/icons';
+import { Timeline, Tag, Row, Col, Button, Space, Avatar, Progress } from "antd";
+import { AimOutlined, EnvironmentOutlined, DeleteOutlined, EyeFilled, CloseOutlined, CheckOutlined } from '@ant-design/icons';
+import { Link } from "react-router-dom";
 
 import container1 from '../../images/container1.jpg'
 import PaperPlane from '../../images/paperPlane.png'
+import Pen from '../../images/pen.png'
 
 const SupplierList = ()=> {
   return(
@@ -17,6 +19,10 @@ const SupplierList = ()=> {
               <Avatar src={container1}/>
               <h3>Cargoship | Shipping</h3>
               <span className='fw-600 color-gray'>&nbsp; wants to supply</span>
+              <p className='company-status online'>
+                <span></span>
+                Online
+              </p>
             </div>
             <div>
               <div className='container-name'>
@@ -66,12 +72,26 @@ const SupplierList = ()=> {
             </Timeline>
           </div>
           <div className='req-charges'>
-            <p className='m-0 fw-600 color-gray'>Total Charges</p>
-            <h3 className='m-0'>$33,000</h3>
-            <p className='m-0 color-gray'>24 Requests</p>
-            <Space className='req-btns' size={15}>
+            <Space size={15}>
+              <div>
+                <p className='m-0 fw-600 color-gray'>Total Charges</p>
+                <h3 className='m-0'>$33,000</h3>
+                <p className='m-0 color-gray'>24 Requests</p>
+              </div>
+              {/* <div className='text-center progress-counter'>
+                <Progress type="circle" size={45} percent={75} format={(percent) => `${percent} /20`} 
+                  strokeColor={{ '0%': '#F49A26', '100%': '#F49A26' }} />
+                <p className='m-0'>Returned</p>
+              </div> */}
+            </Space>
+            {/* <Link to="#" className='color-theme'>View Offers (24)</Link>   */}
+            <Space className='req-btns' size={10}>
               <Button type='gray' className='icon-only'><EyeFilled /></Button>
               <Button type='orange'><img src={PaperPlane} className='anticon'/>Send Request</Button>
+              {/* <Button type='orange' className='icon-only'><img src={Pen} className='anticon'/></Button> */}
+              {/* <Button type='red' className='icon-only'><DeleteOutlined /></Button> */}
+              {/* <Button type='red'><CloseOutlined />Decline</Button> */}
+              {/* <Button type='green'><CheckOutlined />Accept</Button> */}
             </Space>
           </div>
         </div>

@@ -12,7 +12,7 @@
 }
 
 .m-0 {
-  margin: 0;
+  margin: 0 !important;
 }
 
 .mt-0 {
@@ -27,7 +27,8 @@
   justify-content: center;
 }
 
-.text-theme {
+.text-theme,
+.color-theme {
   color: #F49A26;
 }
 

@@ -52,7 +52,7 @@ const RequirementForm = ()=> {
                     <Form.Item>
                       <label className='ant-form-item-label'>Pick-ups</label>
                       <Select style={{ height: 60 }}
-                        placeholder="2 ft. dry container"
+                        placeholder="2 ft. dry container" mode="multiple"
                         options={provinceData.map((province) => ({ label: province, value: province }))}
                       />
                     </Form.Item>
