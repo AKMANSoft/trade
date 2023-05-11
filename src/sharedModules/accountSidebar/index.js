@@ -21,7 +21,8 @@ const Index = () => {
       </Row>
     </div>
     <div className="sidebar-body">
-      <Menu mode="inline" selectedKeys='1'>
+      {/* selectedKeys='1' */}
+      <Menu mode="inline">
         <Menu.Item key="1"><Link to='/my-account'> My Account</Link></Menu.Item>
         <Menu.Item key="2"><Link to='/company-profile'> Company Profile</Link></Menu.Item>
         <Menu.Item key="3"><Link to='/manage-user'> Manage Users</Link></Menu.Item>

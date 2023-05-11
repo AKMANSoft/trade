@@ -19,8 +19,24 @@
   margin-top: 0;
 }
 
+.mt-50 {
+  margin-top: 50px !important;
+}
+
+.block {
+  display: block;
+}
+
+.small {
+  font-size: 80%;
+}
+
 .flex {
   display: flex;
+}
+
+.flex-auto {
+  flex: auto !important;
 }
 
 .justify-content-center {

@@ -10,6 +10,9 @@ const RequirementForm = React.lazy(() => import ('../Container/requirementForm')
 const MyAccount = React.lazy(() => import ('../Container/myAccount'));
 const CompanyProfile = React.lazy(() => import ('../Container/companyProfile'));
 const ManageUser = React.lazy(() => import ('../Container/manageUser'));
+const Trade = React.lazy(() => import ('../Container/trade'));
+const Track = React.lazy(() => import ('../Container/track'));
+const TrackDetail = React.lazy(() => import ('../Container/track/trackDetail'));
 
 const MyRoutes = () => {
   useEffect(() => {
@@ -50,6 +53,24 @@ const MyRoutes = () => {
       <Route path="/supplier-requirements" element={
         <React.Suspense fallback={<span>...Loading</span>}>
           <RequirementForm />
+        </React.Suspense>   
+        } 
+      />
+      <Route path="/trade" element={
+        <React.Suspense fallback={<span>...Loading</span>}>
+          <Trade />
+        </React.Suspense>   
+        } 
+      />
+      <Route path="/tracking" element={
+        <React.Suspense fallback={<span>...Loading</span>}>
+          <Track />
+        </React.Suspense>   
+        } 
+      />
+      <Route path="/tracking/track-detail" element={
+        <React.Suspense fallback={<span>...Loading</span>}>
+          <TrackDetail />
         </React.Suspense>   
         } 
       />
