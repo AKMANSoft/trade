@@ -48,6 +48,9 @@ const Index = () => {
     if(type === 'profile') {
       navigate('/profile-setup')
     }
+    if(type === 'reset') {
+      navigate('/new-password')
+    }
   }
   const handleCancelModal = () => {
     setIsLoginModalOpen(false);
@@ -67,11 +70,11 @@ const Index = () => {
           <div className="menu-navbar">
             <div className="navbar-brand">
               <Link to="/">
-                <img src={Logo} preview="false"/>
+                <img src={Logo} />
               </Link>
             </div>
             <div className="menu-section">
-              <Menu mode="horizontal" disabledOverflow="true">
+              <Menu mode="horizontal">
                 <Menu.Item key="1"><Link to="/">Home</Link></Menu.Item>
                 <Menu.Item key="2"><Link to="/">Our Services</Link></Menu.Item>
                 <Menu.Item key="3"><Link to="/pricing">Price</Link></Menu.Item>
@@ -141,8 +144,8 @@ const Index = () => {
               </Menu>
               <div className="profile-menu">
                 <Menu mode="horizontal" disabledOverflow="true">
-                  <Menu.Item key="1"><Link to='/'><MessageOutlined /> </Link></Menu.Item>
-                  <Menu.Item key="2"><Link to='/'><BellOutlined /></Link></Menu.Item>
+                  <Menu.Item key="1"><Link to='/chat'><MessageOutlined /> </Link></Menu.Item>
+                  <Menu.Item key="2"><Link to='/notification'><BellOutlined /></Link></Menu.Item>
                   <Menu.Item key="3">
                     <Dropdown trigger={['click']} overlay={
                       <Menu>

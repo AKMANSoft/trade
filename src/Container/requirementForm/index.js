@@ -1,12 +1,25 @@
 import React, { useState,useEffect } from 'react';
-import { Button, Row, Col, Input, Select, Form, Switch, Space, Pagination } from "antd";
-import { LeftOutlined, DollarOutlined, PercentageOutlined, EnvironmentOutlined, AimOutlined } from '@ant-design/icons';
+import { Button, Row, Col, Input, Select, Form, Switch, Space, Modal } from "antd";
+import { LeftOutlined, DollarOutlined, PercentageOutlined, EnvironmentOutlined, AimOutlined, CheckOutlined } from '@ant-design/icons';
 
 import Layout from '../../sharedModules/defaultLayout'
 
 const RequirementForm = ()=> {
   const provinceData = ['Zhejiang', 'Jiangsu'];
   const { TextArea } = Input;
+  const [isRequirmentForm, setIsRequirmentForm] = useState(false);
+
+  const openHandleModal = (type) => {
+    if(type === 'added') {
+      setIsRequirmentForm(true)
+    }
+
+  }
+  const handleCancelModal = () => {
+    setIsRequirmentForm(false)
+  }
+
+
   return(
     <Layout>
       <div className='nobanner-layout'>
@@ -153,13 +166,31 @@ const RequirementForm = ()=> {
                   </Col>
                 </Row>
                 <Space size={20} className='mt-100'>
-                  <Button type='orange' size='large' style={{width: 150}}>Submit</Button>
+                  <Button type='orange' size='large' style={{width: 150}} onClick={() => openHandleModal('added')}>Submit</Button>
                   <Button type='gray' size='large' style={{width: 150}}>Discard</Button>
                 </Space>
               </Form>
             </Col>
           </Row>
         </div>
+        <Modal title="" open={isRequirmentForm} onCancel={() => handleCancelModal('check')} footer="">
+          <div className="login-body text-center">
+            <div className="login-head">
+              <div className='icon-circle success'>
+                <CheckOutlined />
+              </div>
+              <h2>Requirements Added!</h2>
+              <p>
+                <strong>Supplying Requirements</strong> have been added successfully for <strong>3x Dry containers</strong> and <strong>20 free days!</strong>
+              </p>
+            </div>
+            <div className="login-content">
+              <Button type="orange" htmlType="submit" onClick={() => handleCancelModal('check')} block size="large">
+                Okay
+              </Button>
+            </div>
+          </div>
+        </Modal>
       </div>
     </Layout>
   )

@@ -1,4 +1,5 @@
 import React, { useState,useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
 import { Button, Row, Col, Form, Input, Space, Select, Upload } from "antd";
 
 import { LockFilled, LoadingOutlined, FileImageOutlined, EnvironmentOutlined, ContainerOutlined } from '@ant-design/icons';
@@ -10,6 +11,10 @@ const CompanyProfile = ()=> {
   const provinceData = ['Zhejiang', 'Jiangsu'];
   const [loading, setLoading] = useState(false);
   const [imageUrl, setImageUrl] = useState();
+  let navigate = useNavigate();
+  const editProfile = () => {
+    navigate('/company-profile/edit')
+  }
 
   const uploadButton = (
     <div className='uploader'>
@@ -31,7 +36,7 @@ const CompanyProfile = ()=> {
             </Col>
             <Col>
               <Space>
-                <Button type='green' style={{height: 46}}><img src={Pen} className='anticon'/>Edit Profile</Button>
+                <Button type='green' style={{height: 46}} onClick={editProfile}><img src={Pen} className='anticon'/>Edit Profile</Button>
                 <Button type='orange' style={{height: 46}}><LockFilled />Change Password</Button>
               </Space>
             </Col>
@@ -123,14 +128,6 @@ const CompanyProfile = ()=> {
                     Upgrade
                   </p>
                 </div>
-                <Row justify='space-between' gutter={30} type='flex'>
-                  <Col span={24}>
-                    
-                  </Col>
-                  <Col span={24}>
-                    
-                  </Col>
-                </Row>
               </Col>
               <Col>
                 <div className='package-type'>

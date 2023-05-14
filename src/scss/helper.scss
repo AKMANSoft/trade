@@ -1,5 +1,7 @@
+@import './scroll.scss';
+
 .p-0 {
-  padding: 0;
+  padding: 0 !important;
 }
 
 .pb-0 {
@@ -17,6 +19,10 @@
 
 .mt-0 {
   margin-top: 0;
+}
+
+.mt-20 {
+  margin-top: 20px !important;
 }
 
 .mt-50 {
@@ -48,6 +54,10 @@
   color: #F49A26;
 }
 
+.text-green {
+  color: #04D393;
+}
+
 .text-white {
   color: #fff;
 }
@@ -66,6 +76,10 @@
 
 .mt-100 {
   margin-top: 100px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
 }
 
 .w-100 {
