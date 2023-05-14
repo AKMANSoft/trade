@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from 'react';
-import { Button, Row, Col, Dropdown, Space, Input,Form, Avatar, Tag, Timeline, Menu, Tabs, Steps } from "antd";
+import { Button, Row, Col, Dropdown, Space, Empty, Form, Avatar, Tag, Timeline, Menu, Tabs, Steps } from "antd";
 import { EyeFilled, EnvironmentOutlined, ContainerOutlined, UserOutlined } from '@ant-design/icons';
 import "../../../css/slick.min.css";
 import Slider from "react-slick";
@@ -37,6 +37,7 @@ const Trade = ()=> {
   const { TabPane } = Tabs;
   const [nav1, setNav1] = useState();
   const [nav2, setNav2] = useState();
+  const [containerSelected, setContainerSelected] = useState(false);
   
   const settings = {
     dots: false,
@@ -86,6 +87,16 @@ const Trade = ()=> {
       },
     ]
   };
+
+  const operations = <p className='m-0'>Charges till today: <strong>$000</strong> </p>;
+
+  const getSelectedContainer = (index) => {
+    console.log(index)
+    setContainerSelected(true)
+  }
+  useEffect(() => {
+    console.log(containerSelected)
+  }, [containerSelected])
   return(
     <Layout>
       <div className='nobanner-layout'> 
@@ -200,8 +211,8 @@ const Trade = ()=> {
               </div>
             </div>
             <div className='container-tabs'>
-              <Tabs defaultActiveKey="cDetails">
-                <TabPane tab="Container Details" key="cDetails">
+              <Tabs defaultActiveKey="cDetails" tabBarExtraContent={operations}>
+                <TabPane tab="Container Details" key="cDetails" >
                   <div className='tab-inner-content'>
                     <div className='desc-box'>
                       <div className='g-content'>
@@ -314,6 +325,14 @@ const Trade = ()=> {
                 <TabPane tab="Documents" key="cDocuments">
                   csdcsd
                 </TabPane>
+                <TabPane key="cActivity" tab={
+                  <div className='with-count'>
+                    Activity
+                    <span className='count'>+1</span>
+                  </div>
+                  }>
+                  csdcsd
+                </TabPane>
                 <TabPane tab="Track Activity" key="cTrack">
                   <Timeline mode='left' 
                     items={[
@@ -375,6 +394,140 @@ const Trade = ()=> {
                     ]}
                   
                   />
+                </TabPane>
+                <TabPane tab="Track Container" key="cTrackCont">
+                  <div className='tab-inner-content'>
+                    <Row gutter={40} className="track-tab">
+                      <Col xl={8} lg={9} md={10}>
+                        <div className='desc-box containers-track m-0'>
+                          <div className='g-content'>
+                            <h2 className='m-0'>Container</h2>
+                          </div>
+                          <div className='container-boxes'>
+                            <div className='box-sec'>
+                              {[...Array(20)].map((x, i) =>
+                                <div className='box-no' onClick={() => getSelectedContainer(i)}>
+                                  <h4 className='m-0'>Container no# 000{i}</h4>
+                                  <p className='m-0'>Empty Returned</p>
+                                </div>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                      </Col>
+                      <Col xl={16} lg={15} md={14}>
+                        {
+                          !containerSelected ? 
+                            <div className='desc-box m-0 track-sheet'>
+                              <Empty
+                                description={
+                                <div className='g-content'>
+                                  <h6 className='m-0'>No Container Selected</h6>
+                                  <p className='m-0 small'>Please select a container to track activity</p>
+                                </div>
+                                }
+                              >
+                              </Empty>
+                            </div>
+                          : 
+                          <div className='desc-box m-0 containers-track track-sheet'>
+                            <div className='g-content'>
+                              <Row type='flex' justify='space-between'>
+                                <Col>
+                                  <h2 className='m-0'>Container</h2>
+                                </Col>
+                                <Col>
+                                  <div className='sort-section'>
+                                    <div className='sort-single'>
+                                      <p className='m-0'>Current Status</p>
+                                      <Dropdown trigger={['click']} overlay={
+                                        <Menu>
+                                          <Menu.Item key="1" >
+                                            <Button type="link"  size="small">
+                                              Upload large file
+                                            </Button>
+                                          </Menu.Item>
+                                        </Menu>
+                                      }>
+                                        <a onClick={(e) => e.preventDefault()} style={{color: '#000'}}>
+                                          <Space>
+                                            Empty Picked Up
+                                            <DownOutlined />
+                                          </Space>
+                                        </a>
+                                      </Dropdown>
+                                    </div>
+                                  </div>
+                                </Col>
+                              </Row>
+                            </div>
+                            <div className='container-boxes'>
+                              <Timeline mode='left' 
+                                items={[
+                                  {
+                                    label: '12:00 - 22 Feb, 2022',
+                                    children: (
+                                      <>
+                                        <div className='track-rec'>
+                                          <h4>Finished</h4>
+                                          <p>Lease was completed with demurrage and </p>
+                                        </div>
+                                      </>
+                                    )
+                                  },
+                                  {
+                                    label: '12:00 - 22 Feb, 2022',
+                                    children: (
+                                      <>
+                                        <div className='track-rec'>
+                                          <h4>Dropped off</h4>
+                                          <p>Equipment dropped off by SK shipping at Jabel Ali.</p>
+                                        </div>
+                                      </>
+                                    )
+                                  },
+                                  {
+                                    label: '12:00 - 22 Feb, 2022',
+                                    children: (
+                                      <>
+                                        <div className='track-rec'>
+                                          <h4>Picked up</h4>
+                                          <p>Equipment were picked up by SK shipping lines from Karachi Port.</p>
+                                        </div>
+                                      </>
+                                    )
+                                  },
+                                  {
+                                    label: '12:00 - 22 Feb, 2022',
+                                    children: (
+                                      <>
+                                        <div className='track-rec'>
+                                          <h4>Document Signed</h4>
+                                          <p>An agreement was signed by both parties.</p>
+                                        </div>
+                                      </>
+                                    )
+                                  },
+                                  {
+                                    label: '12:00 - 22 Feb, 2022',
+                                    children: (
+                                      <>
+                                        <div className='track-rec'>
+                                          <h4>Requested</h4>
+                                          <p>Request was initiated by SK Shipping Lines and accepted by cargoship shipping. </p>
+                                        </div>
+                                      </>
+                                    )
+                                  },
+                                ]}
+                              
+                              />
+                            </div>
+                          </div>
+                        }
+                      </Col>
+                    </Row>
+                  </div>
                 </TabPane>
               </Tabs>
             </div>

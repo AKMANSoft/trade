@@ -9,10 +9,14 @@ const Dashboard = React.lazy(() => import ('../Container/dashboard'));
 const RequirementForm = React.lazy(() => import ('../Container/requirementForm'));
 const MyAccount = React.lazy(() => import ('../Container/myAccount'));
 const CompanyProfile = React.lazy(() => import ('../Container/companyProfile'));
+const CompanyProfileEdit = React.lazy(() => import ('../Container/companyProfile/edit'));
 const ManageUser = React.lazy(() => import ('../Container/manageUser'));
 const Trade = React.lazy(() => import ('../Container/trade'));
 const Track = React.lazy(() => import ('../Container/track'));
 const TrackDetail = React.lazy(() => import ('../Container/track/trackDetail'));
+const Notification = React.lazy(() => import ('../Container/notification'));
+const Chat = React.lazy(() => import ('../Container/chat'));
+const NewPassword = React.lazy(() => import ('../Container/newPassword'));
 
 const MyRoutes = () => {
   useEffect(() => {
@@ -86,9 +90,33 @@ const MyRoutes = () => {
         </React.Suspense>   
         } 
       />
+      <Route path="/company-profile/edit" element={
+        <React.Suspense fallback={<span>...Loading</span>}>
+          <CompanyProfileEdit />
+        </React.Suspense>   
+        } 
+      />
       <Route path="/manage-user" element={
         <React.Suspense fallback={<span>...Loading</span>}>
           <ManageUser />
+        </React.Suspense>   
+        } 
+      />
+      <Route path="/notification" element={
+        <React.Suspense fallback={<span>...Loading</span>}>
+          <Notification />
+        </React.Suspense>   
+        } 
+      />
+      <Route path="/chat" element={
+        <React.Suspense fallback={<span>...Loading</span>}>
+          <Chat />
+        </React.Suspense>   
+        } 
+      />
+      <Route path="/new-password" element={
+        <React.Suspense fallback={<span>...Loading</span>}>
+          <NewPassword />
         </React.Suspense>   
         } 
       />
