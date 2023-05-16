@@ -24,7 +24,7 @@ const Notification = ()=> {
                 <Avatar src={Company} size={50}/>
                 <div className='review-desc'>
                   <div className='review-by'>
-                    <Space size={10}>
+                    <Space size={10} wrap>
                       <h2 className='m-0'>Cargoship | Shipping </h2>
                       <p className='rating'><StarFilled /> 4.7 <small>23 Ratings</small></p>
                     </Space>
@@ -38,7 +38,7 @@ const Notification = ()=> {
                 <Avatar src={Company} size={50}/>
                 <div className='review-desc'>
                   <div className='review-by'>
-                    <Space size={10}>
+                    <Space size={10} wrap>
                       <h2 className='m-0'>Cargoship | Shipping </h2>
                       <p className='rating'><StarFilled /> 4.7 <small>23 Ratings</small></p>
                     </Space>
@@ -57,7 +57,7 @@ const Notification = ()=> {
                 <Avatar src={Company} size={50}/>
                 <div className='review-desc'>
                   <div className='review-by'>
-                    <Space size={10}>
+                    <Space size={10} wrap>
                       <h2 className='m-0'>Cargoship | Shipping </h2>
                       <p className='rating'><StarFilled /> 4.7 <small>23 Ratings</small></p>
                     </Space>
@@ -76,7 +76,7 @@ const Notification = ()=> {
                 <Avatar src={Company} size={50}/>
                 <div className='review-desc'>
                   <div className='review-by'>
-                    <Space size={10}>
+                    <Space size={10} wrap>
                       <h2 className='m-0'>Cargoship | Shipping </h2>
                       <p className='rating'><StarFilled /> 4.7 <small>23 Ratings</small></p>
                     </Space>
@@ -95,7 +95,7 @@ const Notification = ()=> {
                 <Avatar src={Company} size={50}/>
                 <div className='review-desc'>
                   <div className='review-by'>
-                    <Space size={10}>
+                    <Space size={10} wrap>
                       <h2 className='m-0'>Cargoship | Shipping </h2>
                       <p className='rating'><StarFilled /> 4.7 <small>23 Ratings</small></p>
                     </Space>

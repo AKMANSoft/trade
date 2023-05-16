@@ -98,7 +98,7 @@ const Trade = ()=> {
                     <div className='container-image-name'>
                       <Avatar src={container1}/>
                       <h3>Cargoship | Shipping</h3>
-                      <span className='fw-600 color-gray'>&nbsp; wants to supply</span>
+                      <span className='fw-600 color-gray d-md-flex d-none'>&nbsp; wants to supply</span>
                       <p className='company-status online'>
                         <span></span>
                         Online
@@ -106,7 +106,7 @@ const Trade = ()=> {
                     </div>
                     <div>
                       <div className='container-name'>
-                        <Space size={5}>
+                        <Space size={5} wrap>
                           <Tag bordered={false} color='#F49A26'>20x</Tag>
                           <h4 className='m-0'>20ft. Dry Container</h4>
                           <Tag bordered={false}>Cargo Worthy</Tag>
@@ -167,7 +167,7 @@ const Trade = ()=> {
                         </p>
                         <h2 className='mt-50'>Terms Agreed</h2>
                         <Row type='flex' gutter={30} justify='space-between'>
-                          <Col>
+                          <Col md={6} span={24}>
                             <div className='specs'>
                               <p>
                                 Free Days
@@ -187,7 +187,7 @@ const Trade = ()=> {
                               </p>
                             </div>
                           </Col>
-                          <Col>
+                          <Col md={6} span={24}>
                             <div className='specs'>
                               <p>
                                 Free Days
@@ -207,7 +207,7 @@ const Trade = ()=> {
                               </p>
                             </div>
                           </Col>
-                          <Col>
+                          <Col md={6} span={24}>
                             <div className='specs'>
                               <p>
                                 Free Days
@@ -232,7 +232,7 @@ const Trade = ()=> {
                     </div>
 
                     <Row type='flex' gutter={40}>
-                      <Col md={15}>
+                      <Col md={15} span={24}>
                         <div className='g-content'>
                           <h4>Media</h4>
                         </div>
@@ -259,7 +259,7 @@ const Trade = ()=> {
                           </div>
                         </div>
                       </Col>
-                      <Col md={9}>
+                      <Col md={9} span={24} className='mt-md-0 mt-20'>
                         <div className='g-content'>
                           <h4>Chat</h4>
                         </div>

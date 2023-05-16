@@ -25,8 +25,8 @@ const RequirementForm = ()=> {
       <div className='nobanner-layout'>
         <div className='container'>
           <div className='g-content'>
-            <Space>
-              <h4><LeftOutlined /></h4>
+            <Space align="start">
+              <h4 className='mt-10'><LeftOutlined /></h4>
               <div>
                 <h2>New Supplying Requirements</h2>
                 <p className='m-0 color-gray'>Fill out following details to list your container on TYC</p>
@@ -43,7 +43,7 @@ const RequirementForm = ()=> {
               <Form className='w-100' name="basic" layout="vertical"
                 initialValues={{ remember: true }} autoComplete="off">
                 <Row type='flex' gutter={36}>
-                  <Col md={12}>
+                  <Col md={12} span={24}>
                     <Form.Item>
                       <label className='ant-form-item-label'>Container Type</label>
                       <Select style={{ height: 60 }}
@@ -52,7 +52,7 @@ const RequirementForm = ()=> {
                       />
                     </Form.Item>
                   </Col>
-                  <Col md={12}>
+                  <Col md={12} span={24}>
                     <Form.Item>
                       <label className='ant-form-item-label'>Container Condition</label>
                       <Select style={{ height: 60 }}
@@ -61,7 +61,7 @@ const RequirementForm = ()=> {
                       />
                     </Form.Item>
                   </Col>
-                  <Col md={12}>
+                  <Col md={12} span={24}>
                     <Form.Item>
                       <label className='ant-form-item-label'>Pick-ups</label>
                       <Select style={{ height: 60 }}
@@ -70,7 +70,7 @@ const RequirementForm = ()=> {
                       />
                     </Form.Item>
                   </Col>
-                  <Col md={12}>
+                  <Col md={12} span={24}>
                     <Form.Item>
                       <label className='ant-form-item-label'>Drop-offs</label>
                       <Select style={{ height: 60 }}
@@ -79,7 +79,7 @@ const RequirementForm = ()=> {
                       />
                     </Form.Item>
                   </Col>
-                  <Col md={24}>
+                  <Col md={24} span={24}>
                     <Form.Item>
                       <label className='ant-form-item-label'>Description</label>
                       <TextArea rows={4} 
@@ -92,61 +92,61 @@ const RequirementForm = ()=> {
                       <h4>Terms for leasing</h4>
                     </div>
                   </Col>
-                  <Col md={12}>
+                  <Col md={12} span={24}>
                     <Form.Item  label="Free Days"
                       rules={[{ required: true, message: 'Please input your username!' }]}>
                       <Input placeholder="29" style={{ height: 60 }} />
                     </Form.Item>
                   </Col>
-                  <Col md={12}>
+                  <Col md={12} span={24}>
                     <Form.Item  label="Equipment Count"
                       rules={[{ required: true, message: 'Please input your username!' }]}>
                       <Input placeholder="3" style={{ height: 60 }} />
                     </Form.Item>
                   </Col>
-                  <Col md={12}>
+                  <Col md={12} span={24}>
                     <Form.Item  label="Demurrage Charges"
                       rules={[{ required: true, message: 'Please input your username!' }]}>
                       <Input prefix={<DollarOutlined />} placeholder="29" style={{ height: 60 }} />
                     </Form.Item>
                   </Col>
-                  <Col md={12}>
+                  <Col md={12} span={24}>
                     <Form.Item  label="Charges per day"
                       rules={[{ required: true, message: 'Please input your username!' }]}>
                       <Input prefix={<DollarOutlined />} placeholder="3" style={{ height: 60 }} />
                     </Form.Item>
                   </Col>
-                  <Col md={12}>
+                  <Col md={12} span={24}>
                     <Form.Item  label="Storage fee per container"
                       rules={[{ required: true, message: 'Please input your username!' }]}>
                       <Input prefix={<DollarOutlined />} placeholder="993" style={{ height: 60 }} />
                     </Form.Item>
                   </Col>
-                  <Col md={12}>
+                  <Col md={12} span={24}>
                     <Form.Item  label="Detention Charges"
                       rules={[{ required: true, message: 'Please input your username!' }]}>
                       <Input prefix={<DollarOutlined />} placeholder="993" style={{ height: 60 }} />
                     </Form.Item>
                   </Col>
-                  <Col md={12}>
+                  <Col md={12} span={24}>
                     <Form.Item  label="Repairing & Cleaning Included (DPP)"
                       rules={[{ required: true, message: 'Please input your username!' }]}>
                       <Input prefix={<DollarOutlined />} placeholder="993" style={{ height: 60 }} />
                     </Form.Item>
                   </Col>
-                  <Col md={12}>
+                  <Col md={12} span={24}>
                     <Form.Item  label="Discounted Residual Value (New Build Price)"
                       rules={[{ required: true, message: 'Please input your username!' }]}>
                       <Input prefix={<DollarOutlined />} placeholder="993" style={{ height: 60 }} />
                     </Form.Item>
                   </Col>
-                  <Col md={12}>
+                  <Col md={12} span={24}>
                     <Form.Item  label="Discounted Residual Value (Deprecation per year)"
                       rules={[{ required: true, message: 'Please input your username!' }]}>
                       <Input prefix={<DollarOutlined />} suffix={<PercentageOutlined />} placeholder="993" style={{ height: 60 }} />
                     </Form.Item>
                   </Col>
-                  <Col md={12}>
+                  <Col md={12} span={24}>
                     <Form.Item  label="Discounted Residual Value (Min. Replacement)"
                       rules={[{ required: true, message: 'Please input your username!' }]}>
                       <Input prefix={<DollarOutlined />} suffix={<PercentageOutlined />} placeholder="993" style={{ height: 60 }} />
@@ -165,10 +165,10 @@ const RequirementForm = ()=> {
                     </Space>
                   </Col>
                 </Row>
-                <Space size={20} className='mt-100'>
-                  <Button type='orange' size='large' style={{width: 150}} onClick={() => openHandleModal('added')}>Submit</Button>
-                  <Button type='gray' size='large' style={{width: 150}}>Discard</Button>
-                </Space>
+                <div className='offer-btns mt-20 justify-content-start'>
+                  <Button type='orange' size='large' onClick={() => openHandleModal('added')}>Submit</Button>
+                  <Button type='gray' size='large' className='mt-md-0 mt-20'>Discard</Button>
+                </div>
               </Form>
             </Col>
           </Row>

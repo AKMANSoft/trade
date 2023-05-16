@@ -15,8 +15,8 @@ const Index = () => {
         <footer className="footer-overlay">
           <div className="footer-menu-section">
             <div className="container">
-              <Row type='flex' gutter={30}>
-                <Col span={6}>
+              <Row type='flex' gutter={[30, 30]}>
+                <Col md={6} span={24}>
                   <div className="menu-section">
                     <div className="menu-header">
                       <h4>About us</h4>
@@ -29,12 +29,12 @@ const Index = () => {
                         <MailOutlined /><a href="mailto:talk@tyc.com">talk@tyc.com</a>
                       </div>
                       <div className="cta-link">
-                      <PhoneOutlined /><a href="mailto:talk@tyc.com">talk@tyc.com</a>
+                      <PhoneOutlined /><a href="tel:+92 21 3453 4334">+92 21 3453 4334</a>
                       </div>
                     </div>
                   </div>
                 </Col>
-                <Col span={6}>
+                <Col md={6} span={24}>
                   <div className="menu-section">
                     <div className="menu-header">
                       <h4>Quick Links</h4>
@@ -50,7 +50,7 @@ const Index = () => {
                     </div>
                   </div>
                 </Col>
-                <Col span={6}>
+                <Col md={6} span={24}>
                   <div className="menu-section">
                     <div className="menu-header">
                       <h4>Marketplace</h4>
@@ -66,7 +66,7 @@ const Index = () => {
                     </div>
                   </div>
                 </Col>
-                <Col span={6}>
+                <Col md={6} span={24}>
                   <div className="menu-section">
                     <div className="menu-header">
                       <h4>Download Our App</h4>
@@ -90,10 +90,10 @@ const Index = () => {
           <div className="cpr">
             <div className="container">
               <Row type='flex' gutter={30} align="middle">
-                <Col span={12}>
+                <Col md={12} span={24}>
                   <p className="m-0">2023 Copyrights Reserved @ <strong className="text-theme">TYC</strong></p>
                 </Col>
-                <Col span={12}>
+                <Col md={12} span={24}>
                   <div className="social-icons">
                     <p className="m-0">Our Social Media:</p>
                     <ul>

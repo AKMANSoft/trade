@@ -8,6 +8,7 @@ import { PaperClipOutlined, LoadingOutlined, FileImageOutlined } from '@ant-desi
 import Layout from '../../sharedModules/defaultLayout'
 import PageBanner from '../../sharedModules/pageBanner'
 import Pen from '../../images/pen.png'
+import Edit from '../../images/edit.png'
 import company3 from '../../images/company3.png'
 
 
@@ -45,7 +46,7 @@ const ProfileSetup = ()=> {
                   <p className='mt-0'>Fill out following information to create your company account.</p>
                 </div>
                 <div className='profile-wizard'>
-                  <Steps current={currentStep} labelPlacement="vertical" progressDot >
+                  <Steps current={currentStep} labelPlacement="vertical" progressDot responsive={false}>
                     <Step key={0} title="Company Profile" />
                     <Step key={1} title="Documents Submission" />
                     <Step key={2} title="Finish" />
@@ -123,9 +124,9 @@ const ProfileSetup = ()=> {
                             </Form.Item>
 
                             <Row type="flex" justify='space-between'>
-                              <Col></Col>
-                              <Col>
-                                <Button className="" type="orange" size='large' onClick={() => handleClickNext('next')}>Next: Documents Submission</Button>
+                              <Col md={12} span={24}></Col>
+                              <Col md={12} span={24}>
+                                <Button className="ml-auto" type="orange" size='large' onClick={() => handleClickNext('next')}>Next: Documents Submission</Button>
                               </Col>
                             </Row>
                           </Space>
@@ -164,11 +165,11 @@ const ProfileSetup = ()=> {
                               </Form.Item>
 
                               <Row type="flex" justify='space-between'>
-                                <Col>
+                                <Col md={12} span={24}>
                                   <Button className="" type="gradient-primary" size='large' onClick={() => handleClickNext('previous')}>Previous: Company Profile</Button>
                                 </Col>
-                                <Col>
-                                  <Button className="" type="orange" size='large' onClick={() => handleClickNext('next')}>Next: Confirm</Button>
+                                <Col md={12} span={24}>
+                                  <Button className="mt-md-0 mt-20 ml-auto" type="orange" size='large' onClick={() => handleClickNext('next')}>Next: Confirm</Button>
                                 </Col>
                               </Row>
                               
@@ -179,7 +180,7 @@ const ProfileSetup = ()=> {
                               <Row type='flex' gutter={30} align='bottom'>
                                 <Col md={12}>
                                   <h4 className='m-0'>Company Profile</h4>
-                                  <p className='m-0'>Edit Details</p>
+                                  <p className='m-0'><img src={Edit} className='mr-3' />Edit Details</p>
                                   <div className='profile-name'>
                                     <Avatar src={company3} size={80}></Avatar>
                                     <div>
@@ -214,16 +215,16 @@ const ProfileSetup = ()=> {
                               <Row type='flex' gutter={30} align='bottom'>
                                 <Col md={24}>
                                   <h4 className='m-0'>Documents</h4>
-                                  <p className='m-0'>Change</p>
+                                  <p className='m-0'><img src={Edit} className='mr-3' /> Change</p>
                                 </Col>
                               </Row>
                             </div>
                             <Row type="flex" justify='space-between'>
-                              <Col>
+                              <Col md={12} span={24}>
                                 <Button className="" type="gradient-primary" size='large' onClick={() => handleClickNext('previous')}>Previous: Documents Submission</Button>
                               </Col>
-                              <Col>
-                                <Button className="" type="orange" size='large' onClick={() => handleClickNext('next')}>Create Account</Button>
+                              <Col md={12} span={24}>
+                                <Button className="mt-md-0 mt-20 ml-auto" type="orange" size='large'>Create Account</Button>
                               </Col>
                             </Row>                                                        
                           </Space>

@@ -9,7 +9,7 @@ const Index = () => {
         <Row type='flex' gutter={30} justify="center">
           <Col span={24}>
             <Row type='flex' gutter={30} align="middle">
-              <Col span={12}>
+              <Col md={12}>
                 <div className="multi-heading">
                   <h6 className="text-theme">Stay Up-to-Date</h6>
                   <h2>
@@ -17,7 +17,7 @@ const Index = () => {
                   </h2>
                 </div>
               </Col>
-              <Col span={12}>
+              <Col md={12}>
                 <div className="newletter-input">
                   <Input placeholder="someone@email.com" size="large"
                     prefix={<MailOutlined className="site-form-item-icon" />}

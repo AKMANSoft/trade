@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import { Form, Button, Input, Modal, Menu, Checkbox, Row, Col, Dropdown, Space, Avatar } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-import { MailOutlined, LockOutlined, ContainerOutlined, UserOutlined, MessageOutlined, BellOutlined, DownOutlined, FieldTimeOutlined } from '@ant-design/icons';
+import { MailOutlined, LockOutlined, ContainerOutlined, UserOutlined, MessageOutlined, BellOutlined, DownOutlined, FieldTimeOutlined, CloseCircleOutlined } from '@ant-design/icons';
 
 import Logo from '../../images/logo.svg'
 import LoginIcon from '../../images/login-icon.png'
@@ -12,10 +12,12 @@ import company1 from '../../images/company1.png'
 const Index = () => {
   let navigate = useNavigate();
   const location = useLocation();
+  const [current, setCurrent] = useState(1);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isSignupModalOpen, setIsSignupModalOpen] = useState(false);
   const [isForgotModalOpen, setIsForgotModalOpen] = useState(false);
   const [isCheckModalOpen, setIsCheckModalOpen] = useState(false);
+  const [burgerActive, setBurgerActive] = useState(false);
 
   const [isloggedIn, setIsloggedIn] = useState(false);
  
@@ -47,6 +49,7 @@ const Index = () => {
     }
     if(type === 'profile') {
       navigate('/profile-setup')
+      activeNavbar()
     }
     if(type === 'reset') {
       navigate('/new-password')
@@ -58,85 +61,127 @@ const Index = () => {
     setIsForgotModalOpen(false);
     setIsCheckModalOpen(false);
   };
+
+  const activeNavbar =() => {
+    if(burgerActive) {
+      setBurgerActive(false)
+      document.body.classList.remove('nav-open')
+    } else {
+      setBurgerActive(true)
+      document.body.classList.add('nav-open')
+    }
+  }
+
+  const onClick = (e) => {
+    console.log('click ', e);
+    setCurrent(e.key);
+  };
+
   useEffect(() => {
     if(location.pathname !== '/') {
       setIsloggedIn(true)
     }
-  },[isloggedIn])
+    document.body.classList.remove('nav-open')
+  },[isloggedIn, location])
   return (
     <header>
       <div className="container">
         {!isloggedIn ? 
           <div className="menu-navbar">
-            <div className="navbar-brand">
-              <Link to="/">
-                <img src={Logo} />
-              </Link>
+            <div className="menu-seprator">
+              <div className="navbar-brand">
+                <Link to="/">
+                  <img src={Logo} />
+                </Link>
+              </div>
+              <div className={burgerActive ? 'burger-container nav-active' : 'burger-container'}>
+                <Button className="burger" onClick={activeNavbar}>
+                  <span className="bar topBar"></span>
+                  <span className="bar btmBar"></span>
+                </Button>
+              </div>
             </div>
-            <div className="menu-section">
-              <Menu mode="horizontal">
+            <div className={burgerActive ? 'menu-section active' : 'menu-section'}>
+              <Button type='transparent' className="menu-close" onClick={activeNavbar}>
+                <CloseCircleOutlined />
+              </Button>
+              <Menu mode="horizontal" disabledOverflow="true" onClick={onClick} selectedKeys={[current]}>
                 <Menu.Item key="1"><Link to="/">Home</Link></Menu.Item>
                 <Menu.Item key="2"><Link to="/">Our Services</Link></Menu.Item>
-                <Menu.Item key="3"><Link to="/pricing">Price</Link></Menu.Item>
+                <Menu.Item key="3"><Link to="/pricing">Pricing</Link></Menu.Item>
                 <Menu.Item key="4"><Link to="/">About us</Link></Menu.Item>
                 <Menu.Item key="5"><Link to="/">Resources</Link></Menu.Item>
                 <Menu.Item key="6"><Link to="/">Contact us</Link></Menu.Item>
-                
+                <Menu.Item key="7"><Link onClick={() => openHandleModal('login')}><img src={LoginIcon} className='mr-3'/> Login</Link></Menu.Item>
+                <Menu.Item key="8">
+                  <Button className="" type="gradient-primary" onClick={() => openHandleModal('create')}>Create Account</Button>
+                </Menu.Item>
               </Menu>
-              <div className="profile-menu">
-                <Menu mode="horizontal" disabledOverflow="true">
-                  <Menu.Item key="1"><Link onClick={() => openHandleModal('login')}><img src={LoginIcon} /> Login</Link></Menu.Item>
-                  <Menu.Item key="2">
-                    <Button className="" type="gradient-primary" onClick={() => openHandleModal('create')}>Create Account</Button>
-                  </Menu.Item>
-                </Menu>
-              </div>
             </div>
           </div>
           : ''
         }
         {isloggedIn ? 
           <div className="menu-navbar user-loogedin">
-            <div className="navbar-brand">
-              <Link to="/">
-                <img src={Logo} preview="false"/>
-              </Link>
-              <Dropdown trigger={['click']} overlay={
-                <Menu>
-                  <Menu.Item key="1" >
-                    <Link to='/trade'>Trading</Link>
-                  </Menu.Item>
-                </Menu>
-              }>
-                <a onClick={(e) => e.preventDefault()} style={{color: '#000'}}>
-                  <Space>
-                    <FieldTimeOutlined />
-                    <p className="m-0">
-                      Leasing
-                    </p>
-                    <DownOutlined />
-                  </Space>
-                </a>
-              </Dropdown>
+            <div className="menu-seprator">
+              <div className="navbar-brand">
+                <Link to="/">
+                  <img src={Logo} preview="false"/>
+                </Link>
+                <div className="d-md-block d-none">
+                  <Dropdown trigger={['click']} overlay={
+                    <Menu>
+                      <Menu.Item key="1" >
+                        <Link to='/trade'>Trading</Link>
+                      </Menu.Item>
+                    </Menu>
+                  }>
+                    <a onClick={(e) => e.preventDefault()} style={{color: '#000'}}>
+                      <Space>
+                        <FieldTimeOutlined />
+                        <p className="m-0">
+                          Leasing
+                        </p>
+                        <DownOutlined />
+                      </Space>
+                    </a>
+                  </Dropdown>
+                </div>
+              </div>
+              <div className="d-md-none d-flex align-items-center">
+                <div className="mobile-icons">
+                  <Menu mode="horizontal" disabledOverflow="true">
+                    <Menu.Item key="1"><Link to='/chat'><MessageOutlined /> </Link></Menu.Item>
+                    <Menu.Item key="2"><Link to='/notification'><BellOutlined /></Link></Menu.Item>
+                  </Menu>
+                </div>
+                <div className={burgerActive ? 'burger-container nav-active' : 'burger-container'}>
+                  <Button className="burger" onClick={activeNavbar}>
+                    <span className="bar topBar"></span>
+                    <span className="bar btmBar"></span>
+                  </Button>
+                </div>
+              </div>
             </div>
-            <div className="menu-section">
-              <Menu mode="horizontal" disabledOverflow="true">
+            <div className={burgerActive ? 'menu-section active' : 'menu-section'}>
+              <Button type='transparent' className="menu-close" onClick={activeNavbar}>
+                <CloseCircleOutlined />
+              </Button>
+              <Menu mode="horizontal" disabledOverflow="true" onClick={onClick} selectedKeys={[current]}>
                 <Menu.Item key="1"><Link to="/dashboard">Dashboard</Link></Menu.Item>
                 <Menu.Item key="2">
-                  <Menu.Item key="2">
-                    <Dropdown overlay={
-                      <Menu>
-                        <Menu.Item key="1" ><Link to="/my-account">Settings</Link></Menu.Item>
-                      </Menu>
-                    }>
-                      <a onClick={(e) => e.preventDefault()} style={{color: '#000'}}>
-                        <Space>
-                          Request
-                          <DownOutlined />
-                        </Space>
-                      </a>
-                    </Dropdown>
-                  </Menu.Item>
+                  <Dropdown overlay={
+                    <Menu>
+                      <Menu.Item key="1_1" ><Link to="/my-account">Settings</Link></Menu.Item>
+                    </Menu>
+                  }>
+                    <a onClick={(e) => e.preventDefault()} style={{color: '#000'}}>
+                      <Space>
+                        Request
+                        <DownOutlined />
+                      </Space>
+                    </a>
+                  </Dropdown>
                 </Menu.Item>
                 <Menu.Item key="3"><Link to="/tracking">Tracking</Link></Menu.Item>
                 <Menu.Item key="4"><Link to="/">Requirements</Link></Menu.Item>

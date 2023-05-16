@@ -106,36 +106,34 @@ const Dashboard = ()=> {
             </div>
           </div>
           <Row type='flex' justify='space-between' align='middle' gutter={20}>
-            <Col>
+            <Col md={10} span={24}>
               <h2 className='m-0'>Supplying Requirements</h2>
             </Col>
-            <Col>
-              <Space size={16}>
-                <div className='sort-section'>
-                  <div className='sort-single'>
-                    <p className='m-0'>Sort By</p>
-                    <Dropdown trigger={['click']} overlay={
-                      <Menu>
-                        <Menu.Item key="1" >
-                          <Button type="link"  size="small">
-                            Upload large file
-                          </Button>
-                        </Menu.Item>
-                      </Menu>
-                    }>
-                      <a onClick={(e) => e.preventDefault()} style={{color: '#000'}}>
-                        <Space>
-                          Latest on top
-                          <DownOutlined />
-                        </Space>
-                      </a>
-                    </Dropdown>
-                  </div>
+            <Col md={14} span={24}>
+              <div className='sort-section'>
+                <div className='sort-single'>
+                  <p className='m-0'>Sort By</p>
+                  <Dropdown trigger={['click']} overlay={
+                    <Menu>
+                      <Menu.Item key="1" >
+                        <Button type="link"  size="small">
+                          Upload large file
+                        </Button>
+                      </Menu.Item>
+                    </Menu>
+                  }>
+                    <a onClick={(e) => e.preventDefault()} style={{color: '#000'}}>
+                      <Space>
+                        Latest on top
+                        <DownOutlined />
+                      </Space>
+                    </a>
+                  </Dropdown>
                 </div>
                 <Button type="gradient-primary" size="large" onClick={setRequirements}>
                   <PlusCircleOutlined /> New Supplying Requirements
                 </Button>
-              </Space>
+              </div>
             </Col>
           </Row>
 

@@ -55,7 +55,10 @@ const Home = ()=> {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
+          slidesToScroll: 1,
+          arrows: false,
+          centerMode: true,
+          centerPadding: '12px',
         }
       },
     ]
@@ -65,315 +68,311 @@ const Home = ()=> {
       <HeroBanner />
       <section className='g-section top-comapnies'>
         <div className='container'>
-          <Space size={47} direction="vertical">
-            <div className='multi-heading'>
-              <h2>Top Rated Companies</h2>
-            </div>
-            <div className='companies arrows-slider'>
-              <Slider {...settings}>
-                <div className='company-box'>
-                  <div className='company-sec'>
-                    <div className='company-brand'>
-                      <div className='brand-logo'>
-                        <img src={company1}/>
-                      </div>
-                      <h4>Cargoship | Shipping</h4>
-                      <p className='rating'><StarFilled /> 4.7 <small>23 Ratings</small></p>
+          <div className='multi-heading'>
+            <h2>Top Rated Companies</h2>
+          </div>
+          <div className='companies arrows-slider mt-50'>
+            <Slider {...settings}>
+              <div className='company-box'>
+                <div className='company-sec'>
+                  <div className='company-brand'>
+                    <div className='brand-logo'>
+                      <img src={company1}/>
                     </div>
-                    <div className='company-desc'>
-                      <p>45 <small>On Lease</small></p>
-                      <p>45 <small>Sold</small></p>
-                      <p>45 <small>Purchased</small></p>
-                    </div>
+                    <h4>Cargoship | Shipping</h4>
+                    <p className='rating'><StarFilled /> 4.7 <small>23 Ratings</small></p>
+                  </div>
+                  <div className='company-desc'>
+                    <p>45 <small>On Lease</small></p>
+                    <p>45 <small>Sold</small></p>
+                    <p>45 <small>Purchased</small></p>
                   </div>
                 </div>
-                <div className='company-box'>
-                  <div className='company-sec'>
-                    <div className='company-brand'>
-                      <div className='brand-logo'>
-                        <img src={company1}/>
-                      </div>
-                      <h4>Cargoship | Shipping</h4>
-                      <p className='rating'><StarFilled /> 4.7 <small>23 Ratings</small></p>
+              </div>
+              <div className='company-box'>
+                <div className='company-sec'>
+                  <div className='company-brand'>
+                    <div className='brand-logo'>
+                      <img src={company1}/>
                     </div>
-                    <div className='company-desc'>
-                      <p>45 <small>On Lease</small></p>
-                      <p>45 <small>Sold</small></p>
-                      <p>45 <small>Purchased</small></p>
-                    </div>
+                    <h4>Cargoship | Shipping</h4>
+                    <p className='rating'><StarFilled /> 4.7 <small>23 Ratings</small></p>
+                  </div>
+                  <div className='company-desc'>
+                    <p>45 <small>On Lease</small></p>
+                    <p>45 <small>Sold</small></p>
+                    <p>45 <small>Purchased</small></p>
                   </div>
                 </div>
-                <div className='company-box'>
-                  <div className='company-sec'>
-                    <div className='company-brand'>
-                      <div className='brand-logo'>
-                        <img src={company2}/>
-                      </div>
-                      <h4>Cargoship | Shipping</h4>
-                      <p className='rating'><StarFilled /> 4.7 <small>23 Ratings</small></p>
+              </div>
+              <div className='company-box'>
+                <div className='company-sec'>
+                  <div className='company-brand'>
+                    <div className='brand-logo'>
+                      <img src={company2}/>
                     </div>
-                    <div className='company-desc'>
-                      <p>45 <small>On Lease</small></p>
-                      <p>45 <small>Sold</small></p>
-                      <p>45 <small>Purchased</small></p>
-                    </div>
+                    <h4>Cargoship | Shipping</h4>
+                    <p className='rating'><StarFilled /> 4.7 <small>23 Ratings</small></p>
+                  </div>
+                  <div className='company-desc'>
+                    <p>45 <small>On Lease</small></p>
+                    <p>45 <small>Sold</small></p>
+                    <p>45 <small>Purchased</small></p>
                   </div>
                 </div>
-                <div className='company-box'>
-                  <div className='company-sec'>
-                    <div className='company-brand'>
-                      <div className='brand-logo'>
-                        <img src={company3}/>
-                      </div>
-                      <h4>Cargoship | Shipping</h4>
-                      <p className='rating'><StarFilled /> 4.7 <small>23 Ratings</small></p>
+              </div>
+              <div className='company-box'>
+                <div className='company-sec'>
+                  <div className='company-brand'>
+                    <div className='brand-logo'>
+                      <img src={company3}/>
                     </div>
-                    <div className='company-desc'>
-                      <p>45 <small>On Lease</small></p>
-                      <p>45 <small>Sold</small></p>
-                      <p>45 <small>Purchased</small></p>
-                    </div>
+                    <h4>Cargoship | Shipping</h4>
+                    <p className='rating'><StarFilled /> 4.7 <small>23 Ratings</small></p>
+                  </div>
+                  <div className='company-desc'>
+                    <p>45 <small>On Lease</small></p>
+                    <p>45 <small>Sold</small></p>
+                    <p>45 <small>Purchased</small></p>
                   </div>
                 </div>
-                <div className='company-box'>
-                  <div className='company-sec'>
-                    <div className='company-brand'>
-                      <div className='brand-logo'>
-                        <img src={company4}/>
-                      </div>
-                      <h4>Cargoship | Shipping</h4>
-                      <p className='rating'><StarFilled /> 4.7 <small>23 Ratings</small></p>
+              </div>
+              <div className='company-box'>
+                <div className='company-sec'>
+                  <div className='company-brand'>
+                    <div className='brand-logo'>
+                      <img src={company4}/>
                     </div>
-                    <div className='company-desc'>
-                      <p>45 <small>On Lease</small></p>
-                      <p>45 <small>Sold</small></p>
-                      <p>45 <small>Purchased</small></p>
-                    </div>
+                    <h4>Cargoship | Shipping</h4>
+                    <p className='rating'><StarFilled /> 4.7 <small>23 Ratings</small></p>
+                  </div>
+                  <div className='company-desc'>
+                    <p>45 <small>On Lease</small></p>
+                    <p>45 <small>Sold</small></p>
+                    <p>45 <small>Purchased</small></p>
                   </div>
                 </div>
-              </Slider>
-            </div>
-          </Space>
+              </div>
+            </Slider>
+          </div>
         </div>
       </section>
 
       <section className='g-section top-comapnies'>
         <div className='container'>
-          <Space size={47} direction="vertical">
-            <div className='multi-heading'>
-              <h2>Containers Available In “<span>Karachi</span>”</h2>
-            </div>
-            <div className='companies arrows-slider'>
-              <Slider {...settings}>
-                <div className='container-box'>
-                  <div className='container-content'>
-                    <div className='container-image'>
-                      <img src={container1}/>
-                    </div>
-                    <div className='container-desc'>
-                      <div className='container-name'>
-                        <h4 className='m-0'>20ft. Dry Container</h4>
-                        <p className='rating'><StarFilled /> 4.7 <small>23 Ratings</small></p>
-                      </div>
-                      <p className='shippment-off'>
-                        <i className='shipment-icon'><img src={company3}/></i>
-                        SK Shipping Lines
-                      </p>
-                      <div className='end-points'>
-                        <Timeline 
-                          items={[
-                          {
-                            dot: <AimOutlined style={{ fontSize: '16px' }} />,
-                            color: '#727272',
-                            children: 'Jabel Ali',
-                          },
-                          {
-                            dot: <EnvironmentOutlined style={{ fontSize: '16px' }} />,
-                            color: '#727272',
-                            children: 'Jabel Ali',
-                          },
-                          ]}>
-                        </Timeline>
-                      </div>
-                      <div className='availibility'>
-                        <p className='m-0'>Available for:</p>
-                        <Space size={[5,'large']}>
-                          <Tag bordered={false}>Tag 1</Tag>
-                          <Tag bordered={false}>Tag 1</Tag>
-                        </Space>
-                      </div>
-                    </div> 
+          <div className='multi-heading'>
+            <h2>Containers Available In “<span>Karachi</span>”</h2>
+          </div>
+          <div className='companies arrows-slider mt-50'>
+            <Slider {...settings}>
+              <div className='container-box'>
+                <div className='container-content'>
+                  <div className='container-image'>
+                    <img src={container1}/>
                   </div>
-                </div>
-                <div className='container-box'>
-                  <div className='container-content'>
-                    <div className='container-image'>
-                      <img src={container1}/>
+                  <div className='container-desc'>
+                    <div className='container-name'>
+                      <h4 className='m-0'>20ft. Dry Container</h4>
+                      <p className='rating'><StarFilled /> 4.7 <small>23 Ratings</small></p>
                     </div>
-                    <div className='container-desc'>
-                      <div className='container-name'>
-                        <h4 className='m-0'>20ft. Dry Container</h4>
-                        <p className='rating'><StarFilled /> 4.7 <small>23 Ratings</small></p>
-                      </div>
-                      <p className='shippment-off'>
-                        <i className='shipment-icon'><img src={company3}/></i>
-                        SK Shipping Lines
-                      </p>
-                      <div className='end-points'>
-                        <Timeline 
-                          items={[
-                          {
-                            dot: <AimOutlined style={{ fontSize: '16px' }} />,
-                            color: '#727272',
-                            children: 'Jabel Ali',
-                          },
-                          {
-                            dot: <EnvironmentOutlined style={{ fontSize: '16px' }} />,
-                            color: '#727272',
-                            children: 'Jabel Ali',
-                          },
-                          ]}>
-                        </Timeline>
-                      </div>
-                      <div className='availibility'>
-                        <p className='m-0'>Available for:</p>
-                        <Space size={[5,'large']}>
-                          <Tag bordered={false}>Tag 1</Tag>
-                          <Tag bordered={false}>Tag 1</Tag>
-                        </Space>
-                      </div>
-                    </div> 
-                  </div>
-                </div>
-                <div className='container-box'>
-                  <div className='container-content'>
-                    <div className='container-image'>
-                      <img src={container1}/>
+                    <p className='shippment-off'>
+                      <i className='shipment-icon'><img src={company3}/></i>
+                      SK Shipping Lines
+                    </p>
+                    <div className='end-points'>
+                      <Timeline 
+                        items={[
+                        {
+                          dot: <AimOutlined style={{ fontSize: '16px' }} />,
+                          color: '#727272',
+                          children: 'Jabel Ali',
+                        },
+                        {
+                          dot: <EnvironmentOutlined style={{ fontSize: '16px' }} />,
+                          color: '#727272',
+                          children: 'Jabel Ali',
+                        },
+                        ]}>
+                      </Timeline>
                     </div>
-                    <div className='container-desc'>
-                      <div className='container-name'>
-                        <h4 className='m-0'>20ft. Dry Container</h4>
-                        <p className='rating'><StarFilled /> 4.7 <small>23 Ratings</small></p>
-                      </div>
-                      <p className='shippment-off'>
-                        <i className='shipment-icon'><img src={company3}/></i>
-                        SK Shipping Lines
-                      </p>
-                      <div className='end-points'>
-                        <Timeline 
-                          items={[
-                          {
-                            dot: <AimOutlined style={{ fontSize: '16px' }} />,
-                            color: '#727272',
-                            children: 'Jabel Ali',
-                          },
-                          {
-                            dot: <EnvironmentOutlined style={{ fontSize: '16px' }} />,
-                            color: '#727272',
-                            children: 'Jabel Ali',
-                          },
-                          ]}>
-                        </Timeline>
-                      </div>
-                      <div className='availibility'>
-                        <p className='m-0'>Available for:</p>
-                        <Space size={[5,'large']}>
-                          <Tag bordered={false}>Tag 1</Tag>
-                          <Tag bordered={false}>Tag 1</Tag>
-                        </Space>
-                      </div>
-                    </div> 
-                  </div>
-                </div>
-                <div className='container-box'>
-                  <div className='container-content'>
-                    <div className='container-image'>
-                      <img src={container1}/>
+                    <div className='availibility'>
+                      <p className='m-0'>Available for:</p>
+                      <Space size={[5,'large']}>
+                        <Tag bordered={false}>Tag 1</Tag>
+                        <Tag bordered={false}>Tag 1</Tag>
+                      </Space>
                     </div>
-                    <div className='container-desc'>
-                      <div className='container-name'>
-                        <h4 className='m-0'>20ft. Dry Container</h4>
-                        <p className='rating'><StarFilled /> 4.7 <small>23 Ratings</small></p>
-                      </div>
-                      <p className='shippment-off'>
-                        <i className='shipment-icon'><img src={company3}/></i>
-                        SK Shipping Lines
-                      </p>
-                      <div className='end-points'>
-                        <Timeline 
-                          items={[
-                          {
-                            dot: <AimOutlined style={{ fontSize: '16px' }} />,
-                            color: '#727272',
-                            children: 'Jabel Ali',
-                          },
-                          {
-                            dot: <EnvironmentOutlined style={{ fontSize: '16px' }} />,
-                            color: '#727272',
-                            children: 'Jabel Ali',
-                          },
-                          ]}>
-                        </Timeline>
-                      </div>
-                      <div className='availibility'>
-                        <p className='m-0'>Available for:</p>
-                        <Space size={[5,'large']}>
-                          <Tag bordered={false}>Tag 1</Tag>
-                          <Tag bordered={false}>Tag 1</Tag>
-                        </Space>
-                      </div>
-                    </div> 
-                  </div>
+                  </div> 
                 </div>
-                <div className='container-box'>
-                  <div className='container-content'>
-                    <div className='container-image'>
-                      <img src={container1}/>
+              </div>
+              <div className='container-box'>
+                <div className='container-content'>
+                  <div className='container-image'>
+                    <img src={container1}/>
+                  </div>
+                  <div className='container-desc'>
+                    <div className='container-name'>
+                      <h4 className='m-0'>20ft. Dry Container</h4>
+                      <p className='rating'><StarFilled /> 4.7 <small>23 Ratings</small></p>
                     </div>
-                    <div className='container-desc'>
-                      <div className='container-name'>
-                        <h4 className='m-0'>20ft. Dry Container</h4>
-                        <p className='rating'><StarFilled /> 4.7 <small>23 Ratings</small></p>
-                      </div>
-                      <p className='shippment-off'>
-                        <i className='shipment-icon'><img src={company3}/></i>
-                        SK Shipping Lines
-                      </p>
-                      <div className='end-points'>
-                        <Timeline 
-                          items={[
-                          {
-                            dot: <AimOutlined style={{ fontSize: '16px' }} />,
-                            color: '#727272',
-                            children: 'Jabel Ali',
-                          },
-                          {
-                            dot: <EnvironmentOutlined style={{ fontSize: '16px' }} />,
-                            color: '#727272',
-                            children: 'Jabel Ali',
-                          },
-                          ]}>
-                        </Timeline>
-                      </div>
-                      <div className='availibility'>
-                        <p className='m-0'>Available for:</p>
-                        <Space size={[5,'large']}>
-                          <Tag bordered={false}>Tag 1</Tag>
-                          <Tag bordered={false}>Tag 1</Tag>
-                        </Space>
-                      </div>
-                    </div> 
-                  </div>
+                    <p className='shippment-off'>
+                      <i className='shipment-icon'><img src={company3}/></i>
+                      SK Shipping Lines
+                    </p>
+                    <div className='end-points'>
+                      <Timeline 
+                        items={[
+                        {
+                          dot: <AimOutlined style={{ fontSize: '16px' }} />,
+                          color: '#727272',
+                          children: 'Jabel Ali',
+                        },
+                        {
+                          dot: <EnvironmentOutlined style={{ fontSize: '16px' }} />,
+                          color: '#727272',
+                          children: 'Jabel Ali',
+                        },
+                        ]}>
+                      </Timeline>
+                    </div>
+                    <div className='availibility'>
+                      <p className='m-0'>Available for:</p>
+                      <Space size={[5,'large']}>
+                        <Tag bordered={false}>Tag 1</Tag>
+                        <Tag bordered={false}>Tag 1</Tag>
+                      </Space>
+                    </div>
+                  </div> 
                 </div>
-              </Slider>
-            </div>
-          </Space>
+              </div>
+              <div className='container-box'>
+                <div className='container-content'>
+                  <div className='container-image'>
+                    <img src={container1}/>
+                  </div>
+                  <div className='container-desc'>
+                    <div className='container-name'>
+                      <h4 className='m-0'>20ft. Dry Container</h4>
+                      <p className='rating'><StarFilled /> 4.7 <small>23 Ratings</small></p>
+                    </div>
+                    <p className='shippment-off'>
+                      <i className='shipment-icon'><img src={company3}/></i>
+                      SK Shipping Lines
+                    </p>
+                    <div className='end-points'>
+                      <Timeline 
+                        items={[
+                        {
+                          dot: <AimOutlined style={{ fontSize: '16px' }} />,
+                          color: '#727272',
+                          children: 'Jabel Ali',
+                        },
+                        {
+                          dot: <EnvironmentOutlined style={{ fontSize: '16px' }} />,
+                          color: '#727272',
+                          children: 'Jabel Ali',
+                        },
+                        ]}>
+                      </Timeline>
+                    </div>
+                    <div className='availibility'>
+                      <p className='m-0'>Available for:</p>
+                      <Space size={[5,'large']}>
+                        <Tag bordered={false}>Tag 1</Tag>
+                        <Tag bordered={false}>Tag 1</Tag>
+                      </Space>
+                    </div>
+                  </div> 
+                </div>
+              </div>
+              <div className='container-box'>
+                <div className='container-content'>
+                  <div className='container-image'>
+                    <img src={container1}/>
+                  </div>
+                  <div className='container-desc'>
+                    <div className='container-name'>
+                      <h4 className='m-0'>20ft. Dry Container</h4>
+                      <p className='rating'><StarFilled /> 4.7 <small>23 Ratings</small></p>
+                    </div>
+                    <p className='shippment-off'>
+                      <i className='shipment-icon'><img src={company3}/></i>
+                      SK Shipping Lines
+                    </p>
+                    <div className='end-points'>
+                      <Timeline 
+                        items={[
+                        {
+                          dot: <AimOutlined style={{ fontSize: '16px' }} />,
+                          color: '#727272',
+                          children: 'Jabel Ali',
+                        },
+                        {
+                          dot: <EnvironmentOutlined style={{ fontSize: '16px' }} />,
+                          color: '#727272',
+                          children: 'Jabel Ali',
+                        },
+                        ]}>
+                      </Timeline>
+                    </div>
+                    <div className='availibility'>
+                      <p className='m-0'>Available for:</p>
+                      <Space size={[5,'large']}>
+                        <Tag bordered={false}>Tag 1</Tag>
+                        <Tag bordered={false}>Tag 1</Tag>
+                      </Space>
+                    </div>
+                  </div> 
+                </div>
+              </div>
+              <div className='container-box'>
+                <div className='container-content'>
+                  <div className='container-image'>
+                    <img src={container1}/>
+                  </div>
+                  <div className='container-desc'>
+                    <div className='container-name'>
+                      <h4 className='m-0'>20ft. Dry Container</h4>
+                      <p className='rating'><StarFilled /> 4.7 <small>23 Ratings</small></p>
+                    </div>
+                    <p className='shippment-off'>
+                      <i className='shipment-icon'><img src={company3}/></i>
+                      SK Shipping Lines
+                    </p>
+                    <div className='end-points'>
+                      <Timeline 
+                        items={[
+                        {
+                          dot: <AimOutlined style={{ fontSize: '16px' }} />,
+                          color: '#727272',
+                          children: 'Jabel Ali',
+                        },
+                        {
+                          dot: <EnvironmentOutlined style={{ fontSize: '16px' }} />,
+                          color: '#727272',
+                          children: 'Jabel Ali',
+                        },
+                        ]}>
+                      </Timeline>
+                    </div>
+                    <div className='availibility'>
+                      <p className='m-0'>Available for:</p>
+                      <Space size={[5,'large']}>
+                        <Tag bordered={false}>Tag 1</Tag>
+                        <Tag bordered={false}>Tag 1</Tag>
+                      </Space>
+                    </div>
+                  </div> 
+                </div>
+              </div>
+            </Slider>
+          </div>
         </div>
       </section>
 
       <section className='g-section'>
         <div className='container'>
-          <Row type="flex" gutter={30} justify="space-between" align="middle">
+          <Row type="flex" gutter={30} justify="space-between" align="middle" className='trade-img-desc'>
             <Col md={13}>
               <div className='image-content-box'>
                 <div className='image-box'>
@@ -391,13 +390,55 @@ const Home = ()=> {
                     <Avatar src={company2} />
                     <Avatar src={company3} />
                     <Avatar src={company1} />
-                    <p className='m-0'>500+ Shipping Companies</p>
+                    <p className='my-0'>500+ Shipping Companies</p>
                   </div>
                 </div>
               </div>
             </Col>
             <Col md={10}>
-              <Space size={47} direction="vertical">
+              <Space size={47} direction="vertical" className='trade-cont-desc'>
+                <div className='g-content'>
+                  <div className="multi-heading">
+                    <h6 className="text-theme">About TYC</h6>
+                    <h2>
+                    Trade your container <strong>around the globe.</strong>
+                    </h2>
+                  </div>
+                  <p className='m-0'>
+                    Lorem ipsum dolor sit amet consectetur. Aliquam sed sapien ac ipsum in. Laoreet sed enim in ultrices. Tellus lectus urna netus pulvinar interdum. Magnis dui risus vel cursus. Mattis porttitor volutpat mi elit aliquet pharetra.
+                  </p>
+                </div>
+                <Button type="gradient-primary" size="large">
+                  Learn More
+                </Button>
+              </Space>
+            </Col>
+          </Row>
+          <Row type="flex" gutter={30} justify="space-between" align="middle" className='trade-img-desc'>
+            <Col md={13}>
+              <div className='image-content-box'>
+                <div className='image-box'>
+                  <img src={globalTrade}/>
+                </div>
+                <div className='content-box'>
+                  <div className='g-content'>
+                    <h4>500+ Shipping Companies</h4>
+                    <p>
+                      Trade containers with top rated shipment companies. That collectively have 3,000+ containers in their inventory.
+                    </p>
+                  </div>
+                  <div className='companies-list'>
+                    <Avatar src={company1} />
+                    <Avatar src={company2} />
+                    <Avatar src={company3} />
+                    <Avatar src={company1} />
+                    <p className='my-0'>500+ Shipping Companies</p>
+                  </div>
+                </div>
+              </div>
+            </Col>
+            <Col md={10}>
+              <Space size={47} direction="vertical" className='trade-cont-desc'>
                 <div className='g-content'>
                   <div className="multi-heading">
                     <h6 className="text-theme">About TYC</h6>
@@ -418,52 +459,6 @@ const Home = ()=> {
         </div>
       </section>
       
-      <section className='g-section'>
-        <div className='container'>
-          <Row type="flex" gutter={30} justify="space-between" align="middle">
-            <Col md={10}>
-              <Space size={47} direction="vertical">
-                <div className='g-content'>
-                  <div className="multi-heading">
-                    <h6 className="text-theme">About TYC</h6>
-                    <h2>
-                    Trade your container <strong>around the globe.</strong>
-                    </h2>
-                  </div>
-                  <p className='m-0'>
-                    Lorem ipsum dolor sit amet consectetur. Aliquam sed sapien ac ipsum in. Laoreet sed enim in ultrices. Tellus lectus urna netus pulvinar interdum. Magnis dui risus vel cursus. Mattis porttitor volutpat mi elit aliquet pharetra.
-                  </p>
-                </div>
-                <Button type="gradient-primary" size="large">
-                  Learn More
-                </Button>
-              </Space>
-            </Col>
-            <Col md={13}>
-              <div className='image-content-box'>
-                <div className='image-box'>
-                  <img src={globalTrade}/>
-                </div>
-                <div className='content-box'>
-                  <div className='g-content'>
-                    <h4>500+ Shipping Companies</h4>
-                    <p>
-                      Trade containers with top rated shipment companies. That collectively have 3,000+ containers in their inventory.
-                    </p>
-                  </div>
-                  <div className='companies-list'>
-                    <Avatar src={company1} />
-                    <Avatar src={company2} />
-                    <Avatar src={company3} />
-                    <Avatar src={company1} />
-                    <p className='m-0'>500+ Shipping Companies</p>
-                  </div>
-                </div>
-              </div>
-            </Col>
-          </Row>
-        </div>
-      </section>
       <section className='container-facts'>
         <div className='container'>
           <Row type="flex" justify="center">
@@ -474,7 +469,7 @@ const Home = ()=> {
                 Providing Most Sophisticated  <strong>Container Trading Services.</strong>
                 </h2>
               </div>
-              <Space size={70}>
+              <div className='fact-figs'>
                 <div className='single-fact text-center'>
                   <div className='fact-fig'>
                     <div className="multi-heading">
@@ -515,7 +510,7 @@ const Home = ()=> {
                   </div>
                   <h6 className='m-0'>Successful Trade</h6>
                 </div>
-              </Space>
+              </div>
             </Col>
           </Row>
         </div>

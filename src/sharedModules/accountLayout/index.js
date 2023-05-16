@@ -20,10 +20,10 @@ const AccountLayout = (props) => {
       <div className="nobanner-layout accounts-dashboard">
         <div className="container">
           <Row gutter={30}>
-            <Col xl={5} lg={6} md={7}>
+            <Col xl={5} lg={6} md={7} span={24}>
               <AccountSidebar />
             </Col>
-            <Col xl={19} lg={18} md={17}>
+            <Col xl={19} lg={18} md={17} span={24}>
               <main>
                 {props.children}
               </main>
