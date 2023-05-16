@@ -91,14 +91,14 @@ const SupplierList = ()=> {
               <Avatar src={container1}/>
               <h3>Cargoship | Shipping</h3>
               <span className='fw-600 color-gray'>&nbsp; wants to supply</span>
-              <p className='company-status online'>
+              {/* <p className='company-status online'>
                 <span></span>
                 Online
-              </p>
+              </p> */}
             </div>
             <div>
               <div className='container-name'>
-                <Space size={5}>
+                <Space size={5} wrap>
                   <Tag bordered={false} color='#F49A26'>20x</Tag>
                   <h4 className='m-0'>20ft. Dry Container</h4>
                   <Tag bordered={false}>Cargo Worthy</Tag>
@@ -109,13 +109,13 @@ const SupplierList = ()=> {
           <div className='availibility'>
             <Row type='flex' justify='space-between' align='middle' gutter={20}>
               <Col>
-                <Space size={[5,'large']}>
+                <Space size={[5,10]} wrap>
                   <Tag bordered={false}>Valid Forever</Tag>
                   <Tag bordered={false} color='#1DB9B5'>Match Found (1)</Tag>
                   <span className='fw-600 color-gray'>2 hours ago </span>
                 </Space>
               </Col>
-              <Col>
+              <Col className='terms'>
                 <h3 className='m-0'>Terms</h3>
                 <p className='m-0'>20 Freedays / Per Diem: $00 / Pick-up Charge: $00 <span className='color-gray'>paid by user</span> </p>
               </Col>

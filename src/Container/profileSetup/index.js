@@ -45,7 +45,7 @@ const ProfileSetup = ()=> {
                   <p className='mt-0'>Fill out following information to create your company account.</p>
                 </div>
                 <div className='profile-wizard'>
-                  <Steps current={currentStep} labelPlacement="vertical" progressDot >
+                  <Steps current={currentStep} labelPlacement="vertical" progressDot responsive='false'>
                     <Step key={0} title="Company Profile" />
                     <Step key={1} title="Documents Submission" />
                     <Step key={2} title="Finish" />
@@ -123,8 +123,8 @@ const ProfileSetup = ()=> {
                             </Form.Item>
 
                             <Row type="flex" justify='space-between'>
-                              <Col></Col>
-                              <Col>
+                              <Col md={12} span={24}></Col>
+                              <Col md={12} span={24}>
                                 <Button className="" type="orange" size='large' onClick={() => handleClickNext('next')}>Next: Documents Submission</Button>
                               </Col>
                             </Row>
@@ -164,11 +164,11 @@ const ProfileSetup = ()=> {
                               </Form.Item>
 
                               <Row type="flex" justify='space-between'>
-                                <Col>
+                                <Col md={12} span={24}>
                                   <Button className="" type="gradient-primary" size='large' onClick={() => handleClickNext('previous')}>Previous: Company Profile</Button>
                                 </Col>
-                                <Col>
-                                  <Button className="" type="orange" size='large' onClick={() => handleClickNext('next')}>Next: Confirm</Button>
+                                <Col md={12} span={24}>
+                                  <Button className="mt-md-0 mt-20" type="orange" size='large' onClick={() => handleClickNext('next')}>Next: Confirm</Button>
                                 </Col>
                               </Row>
                               
@@ -219,11 +219,11 @@ const ProfileSetup = ()=> {
                               </Row>
                             </div>
                             <Row type="flex" justify='space-between'>
-                              <Col>
+                              <Col md={12} span={24}>
                                 <Button className="" type="gradient-primary" size='large' onClick={() => handleClickNext('previous')}>Previous: Documents Submission</Button>
                               </Col>
-                              <Col>
-                                <Button className="" type="orange" size='large' onClick={() => handleClickNext('next')}>Create Account</Button>
+                              <Col md={12} span={24}>
+                                <Button className="mt-md-0 mt-20" type="orange" size='large'>Create Account</Button>
                               </Col>
                             </Row>                                                        
                           </Space>

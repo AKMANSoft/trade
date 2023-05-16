@@ -25,7 +25,7 @@ const CompanyProfileEdit = ()=> {
             <Row type='flex' justify='space-between' gutter={30}>
               <Col>
                 <div className='reviews'>
-                  <Avatar src={Company} size={100}/>
+                  <Avatar src={Company} className='size-100'/>
                   <div className='review-desc'>
                     <div className='review-by'>
                       <Space size={10}>
@@ -86,7 +86,7 @@ const CompanyProfileEdit = ()=> {
                     <Avatar src={Company} size={50}/>
                     <div className='review-desc'>
                       <div className='review-by'>
-                        <Space size={10}>
+                        <Space size={10} wrap>
                           <h3 className='m-0'>Cargoship | Shipping </h3>
                           <Rate disabled allowHalf defaultValue={2.5} style={{color:  '#F49A26'}}/>
                         </Space>
@@ -100,7 +100,7 @@ const CompanyProfileEdit = ()=> {
                 )}
               </Space>
             </Col>
-            <Col xl={7} lg={8} md={9}>
+            <Col xl={7} lg={8} md={9} className='mt-md-0 mt-20'>
               <Space direction='vertical' size={34} className='w-100'>
                 <div className='desc-box containers-track m-0'>
                   <div className='g-content'>

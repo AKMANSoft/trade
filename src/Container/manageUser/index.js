@@ -26,60 +26,62 @@ const ManageUser = ()=> {
           </Row>
         </div>
         <div className='wrapper-body'>
-          <table className='table'>
-            <thead>
-              <tr>
-                <th>User</th>
-                <th>Access</th>
-                <th>Role</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <h4 className='m-0'>Daniyal Ansari</h4>
-                  <p className='m-0'>daniyal@gmail.com</p>
-                </td>
-                <td>Leasing, Trading</td>
-                <td>Admin</td>
-                <td>
-                  <Space size={5}>
-                    <Button type='green-light'><img src={Pen} /></Button>
-                    <Button type='red-light'><DeleteOutlined /></Button>
-                  </Space>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <h4 className='m-0'>Daniyal Ansari</h4>
-                  <p className='m-0'>daniyal@gmail.com</p>
-                </td>
-                <td>Leasing, Trading</td>
-                <td>Admin</td>
-                <td>
-                  <Space size={5}>
-                    <Button type='green-light'><img src={Pen} /></Button>
-                    <Button type='red-light'><DeleteOutlined /></Button>
-                  </Space>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <h4 className='m-0'>Daniyal Ansari</h4>
-                  <p className='m-0'>daniyal@gmail.com</p>
-                </td>
-                <td>Leasing, Trading</td>
-                <td>Admin</td>
-                <td>
-                  <Space size={5}>
-                    <Button type='green-light'><img src={Pen} /></Button>
-                    <Button type='red-light'><DeleteOutlined /></Button>
-                  </Space>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <div className='table-responsive'>
+            <table className='table'>
+              <thead>
+                <tr>
+                  <th>User</th>
+                  <th>Access</th>
+                  <th>Role</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <h4 className='m-0'>Daniyal Ansari</h4>
+                    <p className='m-0'>daniyal@gmail.com</p>
+                  </td>
+                  <td>Leasing, Trading</td>
+                  <td>Admin</td>
+                  <td>
+                    <Space size={5}>
+                      <Button type='green-light'><img src={Pen} /></Button>
+                      <Button type='red-light'><DeleteOutlined /></Button>
+                    </Space>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <h4 className='m-0'>Daniyal Ansari</h4>
+                    <p className='m-0'>daniyal@gmail.com</p>
+                  </td>
+                  <td>Leasing, Trading</td>
+                  <td>Admin</td>
+                  <td>
+                    <Space size={5}>
+                      <Button type='green-light'><img src={Pen} /></Button>
+                      <Button type='red-light'><DeleteOutlined /></Button>
+                    </Space>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <h4 className='m-0'>Daniyal Ansari</h4>
+                    <p className='m-0'>daniyal@gmail.com</p>
+                  </td>
+                  <td>Leasing, Trading</td>
+                  <td>Admin</td>
+                  <td>
+                    <Space size={5}>
+                      <Button type='green-light'><img src={Pen} /></Button>
+                      <Button type='red-light'><DeleteOutlined /></Button>
+                    </Space>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </AccountLayout>

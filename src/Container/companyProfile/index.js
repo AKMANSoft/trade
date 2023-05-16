@@ -35,7 +35,7 @@ const CompanyProfile = ()=> {
               </div>
             </Col>
             <Col>
-              <Space>
+              <Space className='d-md-flex d-none'>
                 <Button type='green' style={{height: 46}} onClick={editProfile}><img src={Pen} className='anticon'/>Edit Profile</Button>
                 <Button type='orange' style={{height: 46}}><LockFilled />Change Password</Button>
               </Space>
@@ -57,13 +57,13 @@ const CompanyProfile = ()=> {
                   </Upload>
                 </div>
               <Row type='flex' gutter={15}>
-                <Col md={24}>
+                <Col span={24}>
                   <Form.Item  label="Company Name"
                     rules={[{ required: true, message: 'Company Name Required' }]}>
                     <Input prefix={<ContainerOutlined />} placeholder="Company Name" style={{ height: 60 }} />
                   </Form.Item>
                 </Col>
-                <Col md={24}>
+                <Col span={24}>
                   <Form.Item>
                     <label className='ant-form-item-label'>Containers Available</label>
                     <Select style={{ height: 60 }}
@@ -72,7 +72,7 @@ const CompanyProfile = ()=> {
                     />
                   </Form.Item>
                 </Col>
-                <Col md={24}>
+                <Col span={24}>
                   <Form.Item>
                     <label className='ant-form-item-label'>Country</label>
                     <Select style={{ height: 60 }}
@@ -81,7 +81,7 @@ const CompanyProfile = ()=> {
                     />
                   </Form.Item>
                 </Col>
-                <Col md={24}>
+                <Col span={24}>
                   <Form.Item>
                     <label className='ant-form-item-label'>City</label>
                     <Select style={{ height: 60 }}
@@ -90,13 +90,13 @@ const CompanyProfile = ()=> {
                     />
                   </Form.Item>
                 </Col>
-                <Col md={24}>
+                <Col span={24}>
                   <Form.Item  label="Address"
                     rules={[{ required: true, message: 'Please input your username!' }]}>
                     <Input prefix={<EnvironmentOutlined />} placeholder="Address" style={{ height: 60 }} />
                   </Form.Item>
                 </Col>
-                <Col md={24}>
+                <Col span={24}>
                   <Form.Item label="Contact No." style={{ marginBottom: 0 }}>
                     <Form.Item rules={[{ required: true }]} style={{ display: 'inline-block', width: 'calc(15% - 8px)' }}>
                       <Select style={{ height: 60 }}
@@ -109,11 +109,19 @@ const CompanyProfile = ()=> {
                     </Form.Item>
                   </Form.Item>
                 </Col>
-                <Col md={24}>
+                <Col span={24}>
                   <Form.Item  label="Company Email Address"
                     rules={[{ required: true, message: 'Company Name Required' }]}>
                     <Input prefix={<ContainerOutlined />} placeholder="Company Name" style={{ height: 60 }} />
                   </Form.Item>
+                </Col>
+                <Col span={24}>
+                  <div className='d-md-none d-block'>
+                    <Space direction='vertical' size={15} className='w-100'>
+                      <Button type='orange' style={{height: 46}} block><LockFilled />Change Password</Button>
+                      <Button type='green' style={{height: 46}} block onClick={editProfile}><img src={Pen} className='anticon'/>Edit Profile</Button>
+                    </Space>
+                  </div>
                 </Col>
               </Row>
           </Form>

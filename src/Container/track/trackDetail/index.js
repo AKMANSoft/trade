@@ -81,7 +81,7 @@ const Trade = ()=> {
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 3,
           slidesToScroll: 1
         }
       },
@@ -109,7 +109,7 @@ const Trade = ()=> {
                     <div className='container-image-name'>
                       <Avatar src={container1}/>
                       <h3>Cargoship | Shipping</h3>
-                      <span className='fw-600 color-gray'>&nbsp; wants to supply</span>
+                      <span className='fw-600 color-gray d-md-flex d-none'>&nbsp; wants to supply</span>
                       <p className='company-status online'>
                         <span></span>
                         Online
@@ -117,7 +117,7 @@ const Trade = ()=> {
                     </div>
                     <div>
                       <div className='container-name'>
-                        <Space size={5}>
+                        <Space size={5} wrap>
                           <Tag bordered={false} color='#F49A26'>20x</Tag>
                           <h4 className='m-0'>20ft. Dry Container</h4>
                           <Tag bordered={false}>Cargo Worthy</Tag>
@@ -140,6 +140,7 @@ const Trade = ()=> {
                   <div className='container-status'>
                     <Steps
                       labelPlacement='vertical'
+                      responsive={false}
                       items={[
                         {
                           title: 'Negotiation',
@@ -207,6 +208,9 @@ const Trade = ()=> {
                       ]}
                     />
                   </div>
+                  <div className='d-md-none d-block p-12'>
+                  {operations}
+                  </div>
                 </div>
               </div>
             </div>
@@ -222,7 +226,7 @@ const Trade = ()=> {
                         </p>
                         <h2 className='mt-50'>Terms Agreed</h2>
                         <Row type='flex' gutter={30} justify='space-between'>
-                          <Col>
+                          <Col md={6} span={24}>
                             <div className='specs'>
                               <p>
                                 Free Days
@@ -242,7 +246,7 @@ const Trade = ()=> {
                               </p>
                             </div>
                           </Col>
-                          <Col>
+                          <Col md={6} span={24}>
                             <div className='specs'>
                               <p>
                                 Free Days
@@ -262,7 +266,7 @@ const Trade = ()=> {
                               </p>
                             </div>
                           </Col>
-                          <Col>
+                          <Col md={6} span={24}>
                             <div className='specs'>
                               <p>
                                 Free Days
@@ -398,7 +402,7 @@ const Trade = ()=> {
                 <TabPane tab="Track Container" key="cTrackCont">
                   <div className='tab-inner-content'>
                     <Row gutter={40} className="track-tab">
-                      <Col xl={8} lg={9} md={10}>
+                      <Col xl={8} lg={9} md={10} span={24} className='order-md-0 order-1 mt-20 mt-md-0'>
                         <div className='desc-box containers-track m-0'>
                           <div className='g-content'>
                             <h2 className='m-0'>Container</h2>
@@ -415,7 +419,7 @@ const Trade = ()=> {
                           </div>
                         </div>
                       </Col>
-                      <Col xl={16} lg={15} md={14}>
+                      <Col xl={16} lg={15} md={14} span={24}>
                         {
                           !containerSelected ? 
                             <div className='desc-box m-0 track-sheet'>
@@ -433,10 +437,10 @@ const Trade = ()=> {
                           <div className='desc-box m-0 containers-track track-sheet'>
                             <div className='g-content'>
                               <Row type='flex' justify='space-between'>
-                                <Col>
+                                <Col md={10} span={24}>
                                   <h2 className='m-0'>Container</h2>
                                 </Col>
-                                <Col>
+                                <Col md={14} span={24}>
                                   <div className='sort-section'>
                                     <div className='sort-single'>
                                       <p className='m-0'>Current Status</p>

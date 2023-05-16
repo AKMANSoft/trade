@@ -17,7 +17,7 @@ const HeroBanner = ()=> {
       </div>
       <div className='container'>
         <Row type="flex" justify="space-between">
-          <Col span={9}>
+          <Col lg={9} md={10}>
             <div className='g-content text-white'>
               <div className="multi-heading text-white">
                 <h2>
@@ -28,12 +28,12 @@ const HeroBanner = ()=> {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eu ipsum augue. Nullam felis nunc, luctus quis gravida a, mollis sit amet tellus. Etiam et nibh mi.
               </p>
             </div>
-            <Space size={22}>
+            <Space size={22} wrap>
               <Button className="" type="gradient-primary">Create Account</Button>
               <Button className="" type="white">See Pricing</Button>
             </Space>
           </Col>
-          <Col span={10}>
+          <Col lg={10} md={13}>
             <FindContainer />
           </Col>
         </Row>
@@ -41,10 +41,10 @@ const HeroBanner = ()=> {
       <div className='trustedBy'>
         <div className='container'>
           <Row>
-            <Col span={10}>
+            <Col lg={13}>
               <div className='g-content'>
                 <p className='m-0'>Trusted By:</p>
-                <Space className='c-logos' size={44}>
+                <Space className='c-logos' size={[44, 16]} wrap>
                   <div className='s-logo'><img src={Logo1}/></div>
                   <div className='s-logo'><img src={Logo2}/></div>
                   <div className='s-logo'><img src={Logo3}/></div>

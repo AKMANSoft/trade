@@ -2,7 +2,7 @@
 
 import React, { useState,useEffect } from 'react';
 import { Button, Form, Input, Dropdown, Radio, Space, Select } from "antd";
-import { ContainerOutlined, EnvironmentOutlined } from '@ant-design/icons';
+import { ContainerOutlined, EnvironmentOutlined, SearchOutlined } from '@ant-design/icons';
 import { useNavigate } from "react-router-dom";
 
 const FindContainer = ()=> {
@@ -50,7 +50,7 @@ const FindContainer = ()=> {
 
         <Form.Item>
           <Button type="gradient-primary" onClick={handleContainer} htmlType="submit" block size="large">
-            <EnvironmentOutlined /> Select Container
+            <SearchOutlined /> Search Container
           </Button>
         </Form.Item>
       </Form>
