@@ -438,7 +438,7 @@ const Trade = ()=> {
                             <div className='g-content'>
                               <Row type='flex' justify='space-between'>
                                 <Col md={10} span={24}>
-                                  <h2 className='m-0'>Container</h2>
+                                  <h2 className='m-0'>Activity Timeline</h2>
                                 </Col>
                                 <Col md={14} span={24}>
                                   <div className='sort-section'>

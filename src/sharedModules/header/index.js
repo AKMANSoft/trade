@@ -12,6 +12,7 @@ import company1 from '../../images/company1.png'
 const Index = () => {
   let navigate = useNavigate();
   const location = useLocation();
+  const [current, setCurrent] = useState(1);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isSignupModalOpen, setIsSignupModalOpen] = useState(false);
   const [isForgotModalOpen, setIsForgotModalOpen] = useState(false);
@@ -71,6 +72,11 @@ const Index = () => {
     }
   }
 
+  const onClick = (e) => {
+    console.log('click ', e);
+    setCurrent(e.key);
+  };
+
   useEffect(() => {
     if(location.pathname !== '/') {
       setIsloggedIn(true)
@@ -99,7 +105,7 @@ const Index = () => {
               <Button type='transparent' className="menu-close" onClick={activeNavbar}>
                 <CloseCircleOutlined />
               </Button>
-              <Menu mode="horizontal" disabledOverflow="true">
+              <Menu mode="horizontal" disabledOverflow="true" onClick={onClick} selectedKeys={[current]}>
                 <Menu.Item key="1"><Link to="/">Home</Link></Menu.Item>
                 <Menu.Item key="2"><Link to="/">Our Services</Link></Menu.Item>
                 <Menu.Item key="3"><Link to="/pricing">Pricing</Link></Menu.Item>
@@ -161,12 +167,12 @@ const Index = () => {
               <Button type='transparent' className="menu-close" onClick={activeNavbar}>
                 <CloseCircleOutlined />
               </Button>
-              <Menu mode="horizontal" disabledOverflow="true">
+              <Menu mode="horizontal" disabledOverflow="true" onClick={onClick} selectedKeys={[current]}>
                 <Menu.Item key="1"><Link to="/dashboard">Dashboard</Link></Menu.Item>
                 <Menu.Item key="2">
                   <Dropdown overlay={
                     <Menu>
-                      <Menu.Item key="1" ><Link to="/my-account">Settings</Link></Menu.Item>
+                      <Menu.Item key="1_1" ><Link to="/my-account">Settings</Link></Menu.Item>
                     </Menu>
                   }>
                     <a onClick={(e) => e.preventDefault()} style={{color: '#000'}}>
