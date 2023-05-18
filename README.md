@@ -1,6 +1,6 @@
 
 # http://trade.mi6.global
-Open [http://trade.mi6.global](http://trade.mi6.global) to view it in your browser.
+Open [http://trade.mi6.global](http://trade.mi6.global) to view it in your browser..
 
 https://www.figma.com/file/XJVbVVagCkWmf8nRvwQlvu/Trade-Your-Container-(Marketplace)?node-id=802%3A3814&t=Z5ZzJtNGlYrdCFzg-1
 
