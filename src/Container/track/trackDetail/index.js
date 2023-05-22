@@ -10,6 +10,8 @@ import Layout from '../../../sharedModules/defaultLayout'
 import company3 from '../../../images/company3.png'
 import company2 from '../../../images/globalTrade.jpg'
 import container1 from '../../../images/container1.jpg'
+import Chat from '../../../sharedModules/chat'
+import DocsPreview from '../../../sharedModules/docPreview'
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -322,12 +324,18 @@ const Trade = ()=> {
                         <div className='g-content'>
                           <h4>Chat</h4>
                         </div>
+                        <Chat />
                       </Col>
                     </Row>
                   </div>
                 </TabPane>
                 <TabPane tab="Documents" key="cDocuments">
-                  csdcsd
+                  <Space wrap size={40}>
+                    <DocsPreview />
+                    <DocsPreview />
+                    <DocsPreview />
+                    <DocsPreview />
+                  </Space>
                 </TabPane>
                 <TabPane key="cActivity" tab={
                   <div className='with-count'>
