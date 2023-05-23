@@ -2442,8 +2442,10 @@ table.table {
       }
     } 
     &.ant-steps-label-vertical .ant-steps-item-content {
-      margin-left: 15px;
+      margin-left: 0;
       margin-top: 0;
+      position: relative;
+      left: 12px;
       .ant-steps-item-title {
         font-size: 12px;
         color: #9D9D9D;
