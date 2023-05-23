@@ -6,6 +6,8 @@ const Pricing = React.lazy(() => import ('../Container/pricing'));
 const FindContainer = React.lazy(() => import ('../Container/findContainer'));
 const ProfileSetup = React.lazy(() => import ('../Container/profileSetup'));
 const Dashboard = React.lazy(() => import ('../Container/dashboard'));
+const Request = React.lazy(() => import ('../Container/request'));
+const Requirements = React.lazy(() => import ('../Container/requirements'));
 const RequirementForm = React.lazy(() => import ('../Container/requirementForm'));
 const MyAccount = React.lazy(() => import ('../Container/myAccount'));
 const CompanyProfile = React.lazy(() => import ('../Container/companyProfile'));
@@ -51,6 +53,18 @@ const MyRoutes = () => {
       <Route path="/dashboard" element={
         <React.Suspense fallback={<span>...Loading</span>}>
           <Dashboard />
+        </React.Suspense>   
+        } 
+      />
+      <Route path="/requirements" element={
+        <React.Suspense fallback={<span>...Loading</span>}>
+          <Requirements />
+        </React.Suspense>   
+        } 
+      />
+      <Route path="/request" element={
+        <React.Suspense fallback={<span>...Loading</span>}>
+          <Request />
         </React.Suspense>   
         } 
       />

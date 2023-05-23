@@ -172,7 +172,7 @@ const Index = () => {
                 <Menu.Item key="2">
                   <Dropdown overlay={
                     <Menu>
-                      <Menu.Item key="1_1" ><Link to="/my-account">Settings</Link></Menu.Item>
+                      <Menu.Item key="1_1" ><Link to="/request">All Requests</Link></Menu.Item>
                     </Menu>
                   }>
                     <a onClick={(e) => e.preventDefault()} style={{color: '#000'}}>
@@ -184,7 +184,7 @@ const Index = () => {
                   </Dropdown>
                 </Menu.Item>
                 <Menu.Item key="3"><Link to="/tracking">Tracking</Link></Menu.Item>
-                <Menu.Item key="4"><Link to="/">Requirements</Link></Menu.Item>
+                <Menu.Item key="4"><Link to="/requirements">Requirements</Link></Menu.Item>
                 
               </Menu>
               <div className="profile-menu">

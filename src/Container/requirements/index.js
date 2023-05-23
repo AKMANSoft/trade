@@ -7,7 +7,7 @@ import Layout from '../../sharedModules/defaultLayout'
 import company1 from '../../images/company1.png'
 import SupplierList from '../../sharedModules/supplierList'
 
-const Dashboard = ()=> {
+const Requirements = ()=> {
   const provinceData = ['Zhejiang', 'Jiangsu'];
   const [requirement, setRequirement] = useState('Supplying')
   let navigate = useNavigate();
@@ -21,7 +21,7 @@ const Dashboard = ()=> {
         <div className='container'>
           <div className='lease-requirment'>
             <div className='lease-content'>
-              <h3>Search Lease Requirements</h3>
+              <h3>Apply Filter</h3>
               <Radio.Group name='radioGroup' className='container-type' defaultValue={requirement} onChange={(e) => {setRequirement(e.target.value)}} value={requirement}>
                 <Radio.Button value="Supplying">Supplying</Radio.Button>
                 <Radio.Button value="Using">Using</Radio.Button>
@@ -109,7 +109,7 @@ const Dashboard = ()=> {
           </div>
           <Row type='flex' justify='space-between' align='middle' gutter={20}>
             <Col md={10} span={24}>
-              <h2 className='m-0 text-capitalize'>{requirement} Requirements</h2>
+              <h2 className='m-0 text-capitalize'>our {requirement} Requirements</h2>
             </Col>
             <Col md={14} span={24}>
               <div className='sort-section'>
@@ -141,10 +141,10 @@ const Dashboard = ()=> {
 
           <div className='supplier-list'>
             <Space direction='vertical' className='w-100' size={25}>
-              <SupplierList />
-              <SupplierList />
-              <SupplierList />
-              <SupplierList />
+              <SupplierList requirement='true' />
+              <SupplierList requirement='true' />
+              <SupplierList requirement='true'/>
+              <SupplierList requirement='true'/>
             </Space>
           </div>
           <Row type='flex' justify='space-between'>
@@ -161,4 +161,4 @@ const Dashboard = ()=> {
   )
 }
 
-export default Dashboard;
+export default Requirements;

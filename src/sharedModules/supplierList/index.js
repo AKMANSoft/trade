@@ -1,7 +1,7 @@
 
 
 import React, { useState,useEffect } from 'react';
-import { Timeline, Tag, Row, Col, Button, Space, Avatar, Modal, Form, Table, Input, Select } from "antd";
+import { Timeline, Tag, Row, Col, Button, Space, Avatar, Modal, Form, Table, Input, Select, Progress } from "antd";
 import { AimOutlined, EnvironmentOutlined, DeleteOutlined, EyeFilled, CloseOutlined, CheckOutlined, StarFilled } from '@ant-design/icons';
 import { Link } from "react-router-dom";
 
@@ -11,7 +11,7 @@ import Pen from '../../images/pen.png'
 import Company from '../../images/company1.png'
 import Edit from '../../images/edit.png'
 
-const SupplierList = ()=> {
+const SupplierList = ({requirement, requests})=> {
   const { TextArea } = Input;
   const provinceData = ['Zhejiang', 'Jiangsu'];
   const [isRequestOpen, setIsRequestOpen] = useState(false)
@@ -124,10 +124,13 @@ const SupplierList = ()=> {
                   <span className='fw-600 color-gray'>2 hours ago </span>
                 </Space>
               </Col>
-              <Col className='terms'>
-                <h3 className='m-0'>Terms</h3>
-                <p className='m-0'>20 Freedays / Per Diem: $00 / Pick-up Charge: $00 <span className='color-gray'>paid by user</span> </p>
-              </Col>
+              {
+                !requirement ? 
+                <Col className='terms'>
+                  <h3 className='m-0'>Terms</h3>
+                  <p className='m-0'>20 Freedays / Per Diem: $00 / Pick-up Charge: $00 <span className='color-gray'>paid by user</span> </p>
+                </Col> : ''
+              }
             </Row>
           </div>
         </div> 
@@ -153,26 +156,48 @@ const SupplierList = ()=> {
             </Timeline>
           </div>
           <div className='req-charges'>
-            <Space size={15}>
-              <div>
-                <p className='m-0 fw-600 color-gray'>Total Charges</p>
-                <h3 className='m-0'>$33,000</h3>
-                <p className='m-0 color-gray'>24 Requests</p>
-              </div>
-              {/* <div className='text-center progress-counter'>
-                <Progress type="circle" size={45} percent={75} format={(percent) => `${percent} /20`} 
-                  strokeColor={{ '0%': '#F49A26', '100%': '#F49A26' }} />
-                <p className='m-0'>Returned</p>
-              </div> */}
-            </Space>
-            {/* <Link to="#" className='color-theme'>View Offers (24)</Link>   */}
+            <div>
+              <Space size={15} wrap direction='horizontal'>
+                {
+                  requirement ? 
+                  <div>
+                    <p className='m-0 fw-600 color-gray'>Budget</p>
+                    <h3 className='m-0'>$33,000</h3>
+                    <Link to="#" className='color-theme'>View Offers (24)</Link>
+                  </div> :  requests ? 
+                  <>
+                    <div>
+                      <p className='m-0 fw-600 color-gray'>Total Charges</p>
+                      <h3 className='m-0'>$33,000</h3>
+                    </div>
+
+                    <div className='text-center progress-counter'>
+                      <Progress type="circle" size={45} percent={75} format={(percent) => `${percent} /20`} 
+                        strokeColor={{ '0%': '#F49A26', '100%': '#F49A26' }} />
+                      <p className='m-0'>Returned</p>
+                    </div>
+                  </> :
+                  <div>
+                    <p className='m-0 fw-600 color-gray'>Total Charges</p>
+                    <h3 className='m-0'>$33,000</h3>
+                    <p className='m-0 color-gray'>24 Requests</p> 
+                  </div>
+                }
+              </Space>
+            </div>
             <Space className='req-btns' size={10}>
               <Button type='gray' className='icon-only'><EyeFilled /></Button>
-              <Button type='orange' onClick={() => openModal('request')}><img src={PaperPlane} className='anticon'/>Send Request</Button>
-              {/* <Button type='orange' className='icon-only'><img src={Pen} className='anticon'/></Button> */}
-              {/* <Button type='red' className='icon-only'><DeleteOutlined /></Button> */}
-              {/* <Button type='red'><CloseOutlined />Decline</Button> */}
-              {/* <Button type='green'><CheckOutlined />Accept</Button> */}
+              {requirement ? 
+                <>
+                  <Button type='orange' className='icon-only'><img src={Pen} className='anticon'/></Button>
+                  <Button type='red' className='icon-only'><DeleteOutlined /></Button>
+                </> : requests ? 
+                <>
+                  <Button type='green'><CheckOutlined />Accept</Button> 
+                  <Button type='red'><CloseOutlined />Decline</Button>
+                </> :
+                <Button type='orange' onClick={() => openModal('request')}><img src={PaperPlane} className='anticon'/>Send Request</Button>
+              }
             </Space>
           </div>
         </div>
