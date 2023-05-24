@@ -11,7 +11,7 @@ import Pen from '../../images/pen.png'
 import Company from '../../images/company1.png'
 import Edit from '../../images/edit.png'
 
-const SupplierList = ({requirement, requests})=> {
+const SupplierList = ({requirement, requests, selling})=> {
   const { TextArea } = Input;
   const provinceData = ['Zhejiang', 'Jiangsu'];
   const [isRequestOpen, setIsRequestOpen] = useState(false)
@@ -99,11 +99,14 @@ const SupplierList = ({requirement, requests})=> {
             <div className='container-image-name'>
               <Avatar src={container1}/>
               <h3>Cargoship | Shipping</h3>
-              <span className='fw-600 color-gray'>&nbsp; wants to supply</span>
-              {/* <p className='company-status online'>
-                <span></span>
-                Online
-              </p> */}
+              {
+                selling ? 
+                <p className='company-status online'>
+                  <span></span>
+                  Online
+                </p>
+                : <span className='fw-600 color-gray'>&nbsp; wants to supply</span>
+              }
             </div>
             <div>
               <div className='container-name'>
@@ -125,7 +128,7 @@ const SupplierList = ({requirement, requests})=> {
                 </Space>
               </Col>
               {
-                !requirement ? 
+                !requirement && !selling ? 
                 <Col className='terms'>
                   <h3 className='m-0'>Terms</h3>
                   <p className='m-0'>20 Freedays / Per Diem: $00 / Pick-up Charge: $00 <span className='color-gray'>paid by user</span> </p>
@@ -176,7 +179,14 @@ const SupplierList = ({requirement, requests})=> {
                         strokeColor={{ '0%': '#F49A26', '100%': '#F49A26' }} />
                       <p className='m-0'>Returned</p>
                     </div>
-                  </> :
+                  </> : selling ?
+                  <>
+                    <div className='text-center progress-counter'>
+                      <Progress type="circle" size={45} percent={75} format={(percent) => `${percent} /20`} 
+                        strokeColor={{ '0%': '#F49A26', '100%': '#F49A26' }} />
+                      <p className='m-0'>Returned</p>
+                    </div>
+                  </> : 
                   <div>
                     <p className='m-0 fw-600 color-gray'>Total Charges</p>
                     <h3 className='m-0'>$33,000</h3>
@@ -195,8 +205,10 @@ const SupplierList = ({requirement, requests})=> {
                 <>
                   <Button type='green'><CheckOutlined />Accept</Button> 
                   <Button type='red'><CloseOutlined />Decline</Button>
-                </> :
-                <Button type='orange' onClick={() => openModal('request')}><img src={PaperPlane} className='anticon'/>Send Request</Button>
+                </> : selling ? 
+                  <Button type='orange' onClick={() => openModal('request')}><img src={PaperPlane} className='anticon'/>Send Request</Button>
+                  : 
+                  <Button type='orange' onClick={() => openModal('request')}><img src={PaperPlane} className='anticon'/>Send Request</Button>
               }
             </Space>
           </div>

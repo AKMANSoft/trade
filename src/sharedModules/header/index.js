@@ -172,7 +172,8 @@ const Index = () => {
                 <Menu.Item key="2">
                   <Dropdown overlay={
                     <Menu>
-                      <Menu.Item key="1_1" ><Link to="/request">All Requests</Link></Menu.Item>
+                      <Menu.Item key="2_1" ><Link to="/request">All Requests</Link></Menu.Item>
+                      <Menu.Item key="2_2" ><Link to="/request/selling">Requests - Selling</Link></Menu.Item>
                     </Menu>
                   }>
                     <a onClick={(e) => e.preventDefault()} style={{color: '#000'}}>
