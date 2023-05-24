@@ -17,7 +17,7 @@ const content = (
 
 const doubleTick = () => (
   <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M1.75 10.25L4.25 12.75M7.75 8.75L10.25 6.25M5.75 10.25L8.25 12.75L14.25 6.25" stroke="#A4A4A4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M1.75 10.25L4.25 12.75M7.75 8.75L10.25 6.25M5.75 10.25L8.25 12.75L14.25 6.25" stroke="#A4A4A4" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 );
 

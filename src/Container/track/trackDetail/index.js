@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from 'react';
-import { Button, Row, Col, Dropdown, Space, Empty, Form, Avatar, Tag, Timeline, Menu, Tabs, Steps } from "antd";
+import { Button, Row, Col, Dropdown, Space, Empty, Form, Avatar, Tag, Timeline, Menu, Tabs, Steps, Modal } from "antd";
 import { EyeFilled, EnvironmentOutlined, ContainerOutlined, UserOutlined } from '@ant-design/icons';
 import "../../../css/slick.min.css";
 import Slider from "react-slick";
@@ -40,6 +40,7 @@ const Trade = ()=> {
   const [nav1, setNav1] = useState();
   const [nav2, setNav2] = useState();
   const [containerSelected, setContainerSelected] = useState(false);
+  const [isNegotiateOpen, setIsNegotiateOpen] = useState(false);
   
   const settings = {
     dots: false,
@@ -95,6 +96,19 @@ const Trade = ()=> {
   const getSelectedContainer = (index) => {
     setContainerSelected(true)
   }
+  const onChange = (value: number, e) => {
+    // e.stopPropagation()
+    console.log('onChange:', value, e);
+    if(value === 0) {
+      setIsNegotiateOpen(true)
+    }
+  };
+
+
+  const handleCancelModal = () => {
+    setIsNegotiateOpen(false)
+  }
+
   useEffect(() => {
   }, [containerSelected])
   return(
@@ -141,6 +155,8 @@ const Trade = ()=> {
                     <Steps
                       labelPlacement='vertical'
                       responsive={false}
+                      onChange={onChange}
+                      current={2}
                       items={[
                         {
                           title: 'Negotiation',
@@ -199,7 +215,7 @@ const Trade = ()=> {
                           icon: (
                             <>
                               <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <g clip-path="url(#clip0_560_79)">
+                                <g clipPath="url(#clip0_560_79)">
                                 <path d="M28.8984 0.617188V7.03095H35.3117L28.8984 0.617188Z" fill="#9D9D9D"/>
                                 <path d="M27.8438 9.14062C27.2613 9.14062 26.7891 8.66841 26.7891 8.08594V0H11.6719C9.92721 0 8.50781 1.4194 8.50781 3.16406V14.9547C8.8553 14.9232 9.20693 14.9062 9.5625 14.9062C13.1574 14.9062 16.3756 16.5499 18.5053 19.125H29.9531C30.5356 19.125 31.0078 19.5972 31.0078 20.1797C31.0078 20.7622 30.5356 21.2344 29.9531 21.2344H19.8948C20.5686 22.5493 20.9831 23.9816 21.1156 25.4531H29.9531C30.5356 25.4531 31.0078 25.9253 31.0078 26.5078C31.0078 27.0903 30.5356 27.5625 29.9531 27.5625H21.1156C20.8002 31.0457 18.9392 34.0893 16.2252 36H32.7656C34.5103 36 35.9297 34.5806 35.9297 32.8359V9.14062H27.8438ZM29.9531 14.9062H14.4844C13.9019 14.9062 13.4297 14.434 13.4297 13.8516C13.4297 13.2691 13.9019 12.7969 14.4844 12.7969H29.9531C30.5356 12.7969 31.0078 13.2691 31.0078 13.8516C31.0078 14.434 30.5356 14.9062 29.9531 14.9062Z" fill="#9D9D9D"/>
                                 <path d="M9.5625 17.0156C4.32851 17.0156 0.0703125 21.2738 0.0703125 26.5078C0.0703125 31.7418 4.32851 36 9.5625 36C14.7965 36 19.0547 31.7418 19.0547 26.5078C19.0547 21.2738 14.7965 17.0156 9.5625 17.0156ZM12.375 27.5625H9.5625C8.98003 27.5625 8.50781 27.0903 8.50781 26.5078V22.2891C8.50781 21.7066 8.98003 21.2344 9.5625 21.2344C10.145 21.2344 10.6172 21.7066 10.6172 22.2891V25.4531H12.375C12.9575 25.4531 13.4297 25.9253 13.4297 26.5078C13.4297 27.0903 12.9575 27.5625 12.375 27.5625Z" fill="#9D9D9D"/>
@@ -549,6 +565,38 @@ const Trade = ()=> {
           </div>
         </div>
       </div>
+      <Modal title="" open={isNegotiateOpen} onCancel={() => handleCancelModal()} footer="">
+        <div className="login-body negotiation">
+          <div className="login-head">
+            <h2>Negotiation</h2>
+          </div>
+          <div className="login-content">
+            {[...Array(3)].map((x, i) =>
+              <Space align='start' className='mt-20'>
+                <Avatar src={company2} size={40}/>
+                <Row justify='space-between'> 
+                  <Col className='mt-6'>
+                    <Space>
+                      <h5 className='m-0 fw-600'>Cargoship | Shipping</h5>
+                      <p className='m-0 color-gray fw-600 fw-14'>Sent an offer</p>
+                    </Space>
+                  </Col>
+                  <Col className='mt-6'>
+                    <p className='m-0 color-gray fw-600 fw-14'>2 hours ago </p>
+                  </Col>
+                  <Col span={24}>
+                    <p className='fw-14'>20 Freedays / Per Diem: $00 / Pick-up Charge: $00 paid by user / Equipment Count: 3 / Demurrage Charges: $00 / Charges / DRV New Build Price: $000  per Day: $00 / DRV Depreciation per year: 0%  / DRV Minimum Replacement: 0% </p>
+                  </Col>
+                  <Space>
+                    <Button type='orange' className='m-0'>Accept</Button>
+                    <Button type='green' className='m-0'>Counter</Button>
+                  </Space>
+                </Row>
+              </Space>
+            )}
+          </div>
+        </div>
+      </Modal>
     </Layout>
   )
 }
